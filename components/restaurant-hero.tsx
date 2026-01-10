@@ -9,7 +9,7 @@ export default function RestaurantHero() {
           alt="Restaurant"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/50 to-background" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center">
