@@ -2,11 +2,11 @@
 
 const galleryImages = [
   {
-    src: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    src: "/Rooms/hotel-room1.jpeg",
     alt: "Himalayan mountain view near Yamunotri",
   },
   {
-    src: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    src: "/Rooms/hotel-room2.jpeg",
     alt: "Peaceful hotel room interior with natural light",
   },
   {
@@ -17,6 +17,23 @@ const galleryImages = [
     src: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg?auto=compress&cs=tinysrgb&w=1200",
     alt: "Hotel surroundings with greenery and calm nature",
   },
+    {
+    src: "/Rooms/hotel-room3.jpeg",
+    alt: "Hotel surroundings with greenery and calm nature",
+  },
+
+        {
+    src: "/Rooms/hotel-room6.jpeg",
+    alt: "Hotel surroundings with greenery and calm nature",
+  },
+        {
+    src: "/Rooms/hotel-room5.jpeg",
+    alt: "Hotel surroundings with greenery and calm nature",
+  },
+         {
+    src: "/Rooms/hotel-room7.jpeg", 
+    alt: "Hotel surroundings with greenery and calm nature",
+  }
 ]
 
 export default function GalleryPreview() {

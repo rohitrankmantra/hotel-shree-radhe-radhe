@@ -1,9 +1,10 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
-import { Menu, X, Leaf, ChevronDown, ArrowRight } from "lucide-react"
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 
 /* ---------------- NAV ITEM (UNDERLINE EFFECT) ---------------- */
 function NavItem({
@@ -28,7 +29,7 @@ function NavItem({
       </span>
 
       <span
-        className={`absolute -bottom-1 left-0 h-0.75 bg-primary transition-all duration-300 ease-out
+        className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ease-out
         ${active ? "w-full" : "w-0 group-hover:w-full"}`}
       />
     </Link>
@@ -78,17 +79,21 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-background/85 backdrop-blur-lg border-b border-border/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-2">
         <div className="flex h-16 sm:h-20 items-center justify-between">
+
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="p-1.5 rounded-full bg-primary/10 group-hover:bg-primary/20 transition">
-              <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
-            </div>
-            <span className="font-serif text-xl sm:text-2xl font-bold">
-              Shree Radhe
-            </span>
-          </Link>
+     <Link href="/" className="flex items-center">
+  <Image
+    src="/logo-bg.png"
+    alt="Shree Radhe Logo"
+    width={100}   
+    height={36}   
+    priority
+    className="object-contain "
+  />
+</Link>
+
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-9">
@@ -163,10 +168,10 @@ export default function Navbar() {
               )}
             </div>
 
-            <NavItem href="/" label="Restaurant" active={isActive("/restaurant")} />
-            <NavItem href="/" label="Gallery" active={isActive("/gallery")} />
-            <NavItem href="/" label="Location" active={isActive("/location")} />
-            <NavItem href="/" label="Contact" active={isActive("/contact")} />
+            <NavItem href="/restaurant" label="Restaurant" active={isActive("/restaurant")} />
+            <NavItem href="/gallery" label="Gallery" active={isActive("/gallery")} />
+            <NavItem href="/location" label="Location" active={isActive("/location")} />
+            <NavItem href="/contact" label="Contact" active={isActive("/contact")} />
 
             <Link
               href="/contact"
@@ -207,33 +212,6 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-
-            <button
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="flex w-full items-center justify-between text-base font-medium text-muted-foreground hover:text-primary"
-            >
-              Services
-              <ChevronDown
-                className={`w-5 h-5 transition-transform ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-
-            {isServicesOpen && (
-              <div className="pl-6 space-y-3">
-                {servicesMenu.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="block text-sm text-muted-foreground hover:text-primary"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
           </div>
         </div>
       )}

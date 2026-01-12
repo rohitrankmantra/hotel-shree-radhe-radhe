@@ -6,26 +6,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const rooms = [
   {
     id: 1,
-    name: "Serenity Room",
-    image:
-      "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    description: "Intimate mountain view room with natural light",
+    name: "Deluxe Mountain View Room",
+    image: "/Rooms/hotel-room1.jpeg",
+    description:
+      "Spacious deluxe room with plush bedding, warm interiors, and a private window opening to serene Himalayan views.",
   },
   {
     id: 2,
-    name: "Peak Suite",
-    image:
-      "https://images.pexels.com/photos/19332135/pexels-photo-19332135.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    description: "Luxurious suite overlooking the valley",
+    name: "Executive Valley Suite",
+    image: "/Rooms/hotel-room5.jpeg",
+    description:
+      "An elegant suite designed for comfort, featuring a seating area, modern amenities, and panoramic valley scenery.",
   },
   {
     id: 3,
-    name: "Forest Nest",
-    image:
-      "https://images.pexels.com/photos/21012301/pexels-photo-21012301.jpeg",
-    description: "Cozy room surrounded by pine forests",
+    name: "Premium Family Room",
+    image: "/Rooms/hotel-room7.jpeg",
+    description:
+      "Perfect for families, this room offers ample space, cozy furnishings, and a relaxing ambiance for a peaceful stay.",
   },
 ]
+
 
 export default function RoomsPreview() {
   const [current, setCurrent] = useState(0)
