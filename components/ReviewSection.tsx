@@ -66,12 +66,14 @@ export default function ReviewSection() {
   const prevIndex = (i: number) => (i - 1 + cardCount) % cardCount;
 
   useEffect(() => {
-    if (!isAutoScroll) return;
+    if (!isAutoScroll) return undefined;
     autoScrollRef.current = setInterval(
       () => setCurrentIndex((prev) => nextIndex(prev)),
       3000
     );
-    return () => autoScrollRef.current && clearInterval(autoScrollRef.current);
+    return () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+    };
   }, [isAutoScroll]);
 
   const goToPrev = () => {
@@ -141,7 +143,7 @@ export default function ReviewSection() {
           <div className="hidden sm:block">
             <ArrowButton
               onClick={goToPrev}
-              className="absolute left-[-50px] top-1/2 -translate-y-1/2"
+              className="absolute -left-12.5 top-1/2 -translate-y-1/2"
             >
               <ChevronLeft size={28} />
             </ArrowButton>

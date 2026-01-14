@@ -27,89 +27,97 @@ const rooms = [
   },
 ]
 
-
 export default function RoomsPreview() {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState<number>(0)
 
-  const next = () => {
-    setCurrent((prev) => (prev + 1) % rooms.length)
-  }
-
-  const prev = () => {
-    setCurrent((prev) => (prev - 1 + rooms.length) % rooms.length)
-  }
+  const next = () => setCurrent((prev) => (prev + 1) % rooms.length)
+  const prev = () => setCurrent((prev) => (prev - 1 + rooms.length) % rooms.length)
 
   return (
-    <section className="relative py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-14 md:py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-        {/* SUBHEADING (ADDED – SAME STYLE AS OTHER SECTIONS) */}
-        <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-medium tracking-wider uppercase">
+        {/* SECTION HEADER */}
+        <span className="inline-block mb-3 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs sm:text-sm uppercase tracking-wider">
           Stay With Comfort
         </span>
 
-        <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-3">
           Our Rooms & Suites
         </h2>
 
-        <p className="text-foreground/60 mb-12 max-w-2xl">
+        <p className="text-sm sm:text-base text-foreground/60 mb-8 max-w-2xl">
           Each room is thoughtfully designed to provide comfort and tranquility
         </p>
 
         {/* SLIDER */}
-        <div className="relative h-96 md:h-screen max-h-96 md:max-h-none group overflow-hidden rounded-2xl">
-          {rooms.map((room, idx) => (
-            <div
-              key={idx}
-              className={`absolute inset-0 transition-opacity duration-700 ${
-                idx === current ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <img
-                src={room.image}
-                alt={room.name}
-                className="w-full h-full object-cover"
-              />
+        <div className="relative h-105 sm:h-120 md:h-155 rounded-2xl overflow-hidden">
+          {rooms.map((room, idx) => {
+            const isActive = idx === current
 
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+            return (
+              <div
+                key={room.id}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  isActive ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {/* IMAGE */}
+                <img
+                  src={room.image}
+                  alt={room.name}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
 
-              {/* ROOM INFO */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
-                <h3 className="font-serif text-4xl md:text-5xl font-bold mb-3">
-                  {room.name}
-                </h3>
-                <p className="text-lg text-white/90 max-w-2xl">
-                  {room.description}
-                </p>
+                {/* OVERLAY */}
+                <div className="absolute inset-0 bg-black/40" />
+
+                {/* CONTENT */}
+                <div className="relative z-10 h-full flex items-end">
+                  <div className="w-full px-5 sm:px-8 md:px-12 pb-10 sm:pb-14 text-white text-center">
+
+                    {/* HEADING */}
+                    <h3 className="font-serif text-2xl sm:text-3xl md:text-5xl font-bold mb-5 max-w-3xl mx-auto">
+                      {room.name}
+                    </h3>
+
+                    {/* NAVIGATION – SIDE BY SIDE */}
+                    <div className="flex justify-center gap-6 mb-5">
+                      <button
+                        onClick={prev}
+                        className="p-3 rounded-full bg-white/30 hover:bg-white/50 transition"
+                      >
+                        <ChevronLeft size={24} />
+                      </button>
+
+                      <button
+                        onClick={next}
+                        className="p-3 rounded-full bg-white/30 hover:bg-white/50 transition"
+                      >
+                        <ChevronRight size={24} />
+                      </button>
+                    </div>
+
+                    {/* DESCRIPTION */}
+                    <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+                      {room.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
-
-          {/* NAVIGATION */}
-          <button
-            onClick={prev}
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/20 opacity-0 group-hover:opacity-100 hover:bg-white/40 transition-all text-white"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          <button
-            onClick={next}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/20 opacity-0 group-hover:opacity-100 hover:bg-white/40 transition-all text-white"
-          >
-            <ChevronRight size={24} />
-          </button>
+            )
+          })}
 
           {/* INDICATORS */}
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+          <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
             {rooms.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrent(idx)}
-                className={`transition-all ${
+                className={`rounded-full transition-all ${
                   idx === current
-                    ? "w-8 h-2 bg-white"
-                    : "w-2 h-2 bg-white/50 hover:bg-white/75"
+                    ? "w-6 h-2 bg-white"
+                    : "w-2 h-2 bg-white/50 hover:bg-white/80"
                 }`}
               />
             ))}
@@ -117,10 +125,10 @@ export default function RoomsPreview() {
         </div>
 
         {/* VIEW ALL */}
-        <div className="mt-12 flex justify-center">
+        <div className="mt-10 flex justify-center">
           <a
             href="/rooms"
-            className="font-serif text-lg text-accent hover:text-primary transition-colors underline underline-offset-4"
+            className="font-serif text-base sm:text-lg text-accent hover:text-primary underline underline-offset-4"
           >
             Explore All Rooms
           </a>
