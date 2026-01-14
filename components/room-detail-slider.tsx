@@ -39,8 +39,8 @@ const featuredRooms = [
 ]
 
 export default function RoomDetailSlider() {
-  const [current, setCurrent] = useState(0)
-  const autoplayRef = useRef<NodeJS.Timeout>()
+  const [current, setCurrent] = useState<number>(0)
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     autoplayRef.current = setInterval(() => {

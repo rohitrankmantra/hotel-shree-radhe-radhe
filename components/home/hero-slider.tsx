@@ -64,7 +64,7 @@ export default function HeroSlider() {
             ${idx === current ? "opacity-100 scale-105" : "opacity-0 scale-100"}`}
         >
           <img src={image.src} alt={image.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50" />
+          <div className="absolute inset-0 'bg-linear-to-t from-black/70 via-black/30 to-black/50" />
         </div>
       ))}
 
