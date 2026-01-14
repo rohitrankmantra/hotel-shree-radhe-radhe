@@ -35,7 +35,6 @@ const galleryImages = [
     alt: "Hotel surroundings with greenery and calm nature",
   }
 ]
-
 export default function GalleryPreview() {
   return (
     <section className="py-20 bg-background">

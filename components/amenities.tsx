@@ -1,7 +1,5 @@
 "use client"
-
 import { Leaf, Droplet, Tv, Flame, Coffee, BookOpen, Activity, Headphones } from "lucide-react"
-
 const amenities = [
   { icon: Leaf, name: "Organic Bedding", description: "Premium natural fabrics" },
   { icon: Droplet, name: "Mountain Water", description: "Natural spring water" },
