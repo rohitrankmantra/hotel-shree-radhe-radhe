@@ -8,6 +8,8 @@ import RestaurantSection from "@/components/home/restaurant-section"
 import GalleryPreview from "@/components/home/gallery-preview"
 import LocationPreview from "@/components/home/location-preview"
 import Footer from "@/components/footer"
+import ReviewSection from "@/components/ReviewSection"
+
 
 export default function Home() {
   return (
@@ -18,6 +20,7 @@ export default function Home() {
       <RoomsPreview />
       <RestaurantSection />
       <GalleryPreview />
+      <ReviewSection />
       <LocationPreview />
     </main>
   )
