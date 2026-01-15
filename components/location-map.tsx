@@ -1,24 +1,152 @@
-"use client"
+"use client";
+
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { MapPin, Navigation } from "lucide-react";
 
 export default function LocationMap() {
-  return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-12 text-center text-balance">
-          Our Location on Yamunotri Road
-        </h2>
+  const { theme, systemTheme } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
 
-        <div className="rounded-xl overflow-hidden h-96 md:h-screen max-h-96 md:max-h-none border border-border">
+  const currentTheme = theme === "system" ? systemTheme : theme;
+  const isDark = currentTheme === "dark";
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  // zoom control (pb logic preserved)
+  const zoomLevel = isMobile ? "4f6.1" : "4f7.1";
+
+  // satellite + dark mode
+  const mapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13777.809842964827!2d78.4521!3d31.0127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!${zoomLevel}!3m3!1m2!1s0x3908bda7747d1f21%3A0x6870fdc614b4102a!2sHotel%20Radhe%20Radhe%2C%20Yamunotri!5e0!3m2!1sen!2sin!4v1705300000000&maptype=satellite${
+    isDark ? "&theme=dark" : ""
+  }`;
+
+  return (
+    <section className="py-16 md:py-20">
+      <div className="w-full flex justify-center px-4">
+        <div
+          className="
+            relative
+            w-full
+            max-w-6xl
+            h-105
+            md:h-130
+            rounded-2xl
+            overflow-hidden
+            border border-border/60
+            shadow-sm
+            bg-muted
+          "
+        >
+          {/* MAP */}
           <iframe
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
+            title="Hotel Radhe Radhe Yamunotri Location"
+            src={mapSrc}
+            className="w-full h-full"
             loading="lazy"
-            allowFullScreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3335.8883155905447!2d78.48567!3d30.3875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390b97f7d1a1a1a1%3A0x1a1a1a1a1a1a1a1a!2sYamunotri%20Road%2C%20Barkot%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1234567890"
+            referrerPolicy="no-referrer-when-downgrade"
+            onMouseDown={() => setIsInteracting(true)}
+            onTouchStart={() => setIsInteracting(true)}
+            onMouseUp={() => setIsInteracting(false)}
+            onTouchEnd={() => setIsInteracting(false)}
           />
+
+          {/* OPEN IN MAPS */}
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Hotel+Radhe+Radhe+Yamunotri"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              absolute
+              top-4
+              right-4
+              z-10
+              rounded-full
+              bg-background/90
+              backdrop-blur-md
+              border border-border/60
+              px-4
+              py-2
+              text-xs
+              font-medium
+              flex items-center gap-2
+              hover:bg-background
+              transition
+            "
+          >
+            <Navigation className="h-4 w-4 text-primary" />
+            Open in Maps
+          </a>
+
+          {/* LOCATION OVERLAY */}
+          <div
+            className={`
+              absolute
+              z-10
+              transition-opacity duration-300
+              ${isInteracting ? "opacity-40" : "opacity-100"}
+
+              /* mobile */
+              bottom-8
+              left-1/2
+              -translate-x-1/2
+
+              /* desktop */
+              md:left-6
+              md:bottom-10
+              md:translate-x-0
+
+              max-w-sm
+              rounded-xl
+              bg-background/85
+              backdrop-blur-md
+              border border-border/50
+              p-3 md:p-4
+              shadow-md
+            `}
+          >
+            <div className="flex items-start gap-3">
+              {/* PIN WITH AUTO PULSE */}
+              <div className="relative">
+                <span className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
+                <MapPin className="relative h-4 w-4 md:h-5 md:w-5 text-primary" />
+              </div>
+
+              <div>
+                <p className="font-semibold text-xs md:text-sm">
+                  Hotel Radhe Radhe
+                </p>
+                <p className="text-[10px] md:text-xs text-muted-foreground">
+                  Yamunotri Road, Uttarakhand
+                </p>
+
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Hotel+Radhe+Radhe+Yamunotri"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-block
+                    mt-1.5
+                    text-[11px]
+                    md:text-xs
+                    font-medium
+                    text-primary
+                    hover:underline
+                  "
+                >
+                  Get Directions →
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

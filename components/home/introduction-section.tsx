@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 
 import { motion } from "framer-motion"
 
@@ -64,10 +65,10 @@ export default function IntroductionSection() {
             </div>
 
             <motion.div whileHover={{ scale: 1.03 }} className="inline-block pt-3 sm:pt-4">
-              <button className="px-6 sm:px-7 py-3 sm:py-3.5 bg-primary text-primary-foreground rounded-full text-sm sm:text-base md:text-lg font-medium shadow-lg hover:bg-primary/90 transition-all flex items-center gap-2.5 group">
-                Explore Our World
+              <Link href="/rooms" className="px-6 sm:px-7 py-3 sm:py-3.5 bg-primary text-primary-foreground rounded-full text-sm sm:text-base md:text-lg font-medium shadow-lg hover:bg-primary/90 transition-all flex items-center gap-2.5 group">
+                Explore Our services
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
 

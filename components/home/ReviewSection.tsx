@@ -5,10 +5,10 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 
 const reviews = [
   {
-    name: "Mayur Kapse",
+    name: "Rajneeta Chauhan",
     rating: 5,
     review:
-      "Situated on the banks of Yamuna river with an amazing view. Rooms are very clean, food feels like home, and staff is extremely supportive.",
+      "Very beautiful location, very good service..good food....",
   },
   {
     name: "Surya Clicks",
@@ -16,21 +16,21 @@ const reviews = [
     review: "Very very beautiful view hotel, just like in a movie.",
   },
   {
-    name: "Rahul Kumar",
+    name: "Akash Agarwal",
     rating: 5,
-    review: "Comfortable stay with a lovely view.",
+    review: "Very good service. Nice awesome food.",
   },
   {
-    name: "Anjali Verma",
+    name: "Abhinav Chauhan",
     rating: 4,
     review:
-      "Peaceful location, spacious rooms, and very clean. Highly recommended.",
+      "Good place , good location and good people.",
   },
   {
-    name: "Suresh Patel",
+    name: "Rahul Kumar",
     rating: 5,
     review:
-      "Amazing hospitality and excellent food. The mountain view was breathtaking.",
+      "Comfortable Stay Lovely View.",
   },
 ]
 

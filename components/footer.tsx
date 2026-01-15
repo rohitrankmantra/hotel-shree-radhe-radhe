@@ -1,5 +1,5 @@
 "use client"
-
+import logo from "../public/logo-bg.png"
 import Link from "next/link"
 import { Phone, MessageCircle, MapPin, Leaf } from "lucide-react"
 
@@ -16,21 +16,32 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
 
           {/* BRAND */}
-          <div className="space-y-5">
-            <div className="flex items-center gap-3">
-              <div className="p-2 rounded-full bg-primary/15">
-                <Leaf className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="font-serif text-2xl font-bold">
-                Shree Radhe Radhe
-              </h3>
-            </div>
+       <div className="space-y-4">
+  <div className="flex items-center gap-3">
+    <div className="relative">
+      <div className="flex h-18 w-18 items-center justify-center rounded-full
+        bg-primary/15 ring-1 ring-primary/30">
+        <img
+          src={logo.src}
+          alt="Shree Radhe Radhe"
+          className="h-18 w-18 object-contain"
+        />
+      </div>
+      {/* subtle spiritual glow */}
+      <span className="absolute inset-0 rounded-full bg-primary/20 blur-md -z-10" />
+    </div>
 
-            <p className="text-sm text-background/70 leading-relaxed max-w-sm">
-              A peaceful sanctuary for pilgrims and seekers, located on the
-              sacred Yamunotri Road amidst the serene beauty of Uttarakhand.
-            </p>
-          </div>
+    <h3 className="font-serif text-lg font-semibold tracking-wide">
+      Shree Radhe Radhe
+    </h3>
+  </div>
+
+  <p className="text-sm text-background/70 leading-relaxed max-w-sm">
+    A peaceful sanctuary for pilgrims and seekers, located on the
+    sacred Yamunotri Road amidst the serene beauty of Uttarakhand.
+  </p>
+</div>
+
 
           {/* QUICK LINKS */}
           <div>
