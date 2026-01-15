@@ -8,7 +8,7 @@ import RestaurantSection from "@/components/home/restaurant-section"
 import GalleryPreview from "@/components/home/gallery-preview"
 import LocationPreview from "@/components/home/location-preview"
 import Footer from "@/components/footer"
-import ReviewSection from "@/components/ReviewSection"
+import ReviewSection from "@/components/home/ReviewSection"
 
 
 export default function Home() {
