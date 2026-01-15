@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cinzel.variable} ${inter.variable} font-sans antialiased`}>
+      <body className={`${cinzel.variable} ${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <Navbar/>
         {children}
         <Footer/>

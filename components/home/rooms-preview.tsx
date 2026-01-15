@@ -31,7 +31,8 @@ export default function RoomsPreview() {
   const [current, setCurrent] = useState<number>(0)
 
   const next = () => setCurrent((prev) => (prev + 1) % rooms.length)
-  const prev = () => setCurrent((prev) => (prev - 1 + rooms.length) % rooms.length)
+  const prev = () =>
+    setCurrent((prev) => (prev - 1 + rooms.length) % rooms.length)
 
   return (
     <section className="py-14 md:py-20 bg-background">
@@ -52,6 +53,7 @@ export default function RoomsPreview() {
 
         {/* SLIDER */}
         <div className="relative h-105 sm:h-120 md:h-155 rounded-2xl overflow-hidden">
+
           {rooms.map((room, idx) => {
             const isActive = idx === current
 
@@ -76,29 +78,10 @@ export default function RoomsPreview() {
                 <div className="relative z-10 h-full flex items-end">
                   <div className="w-full px-5 sm:px-8 md:px-12 pb-10 sm:pb-14 text-white text-center">
 
-                    {/* HEADING */}
                     <h3 className="font-serif text-2xl sm:text-3xl md:text-5xl font-bold mb-5 max-w-3xl mx-auto">
                       {room.name}
                     </h3>
 
-                    {/* NAVIGATION – SIDE BY SIDE */}
-                    <div className="flex justify-center gap-6 mb-5">
-                      <button
-                        onClick={prev}
-                        className="p-3 rounded-full bg-white/30 hover:bg-white/50 transition"
-                      >
-                        <ChevronLeft size={24} />
-                      </button>
-
-                      <button
-                        onClick={next}
-                        className="p-3 rounded-full bg-white/30 hover:bg-white/50 transition"
-                      >
-                        <ChevronRight size={24} />
-                      </button>
-                    </div>
-
-                    {/* DESCRIPTION */}
                     <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
                       {room.description}
                     </p>
@@ -107,6 +90,24 @@ export default function RoomsPreview() {
               </div>
             )
           })}
+
+          {/* LEFT ARROW – DESKTOP ONLY */}
+          <button
+            onClick={prev}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20
+                       p-4 rounded-full bg-white/30 hover:bg-white/50 transition"
+          >
+            <ChevronLeft size={26} />
+          </button>
+
+          {/* RIGHT ARROW – DESKTOP ONLY */}
+          <button
+            onClick={next}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20
+                       p-4 rounded-full bg-white/30 hover:bg-white/50 transition"
+          >
+            <ChevronRight size={26} />
+          </button>
 
           {/* INDICATORS */}
           <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">

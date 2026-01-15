@@ -15,7 +15,7 @@ export default function LocationPage() {
       <LocationMap />
       <DistanceInfo />
       <RouteGuidance />
-      <Footer />
+ 
     </main>
   )
 }

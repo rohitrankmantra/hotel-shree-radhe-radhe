@@ -76,7 +76,7 @@ export default function RoomDetailSlider() {
               <p className="text-accent text-sm font-medium mb-2 uppercase tracking-widest">
                 {featuredRooms[current].category}
               </p>
-              <h2 className="font-serif text-5xl font-bold text-foreground mb-4">{featuredRooms[current].name}</h2>
+              <h2 className="font-serif text-5xl text-[#22441A] font-bold  mb-4">{featuredRooms[current].name}</h2>
               <p className="text-3xl text-accent font-semibold">{featuredRooms[current].price}</p>
               <p className="text-foreground/60 text-sm mt-2">per night</p>
             </div>

@@ -1,31 +1,35 @@
 "use client"
 
-import { Mountain, Leaf, Zap, Sparkles } from "lucide-react"
+
+import { GiMountains } from "react-icons/gi";
+import { FaLeaf } from "react-icons/fa6";
+import { GiByzantinTemple } from "react-icons/gi";
+import { FaDove } from "react-icons/fa";
 
 const experiences = [
   {
     id: 1,
     title: "Mountain Stay",
     description: "Comfortable rooms with breathtaking Himalayan views",
-    icon: Mountain,
+    icon: GiMountains,
   },
   {
     id: 2,
     title: "Pure Vegetarian Bhojan",
     description: "Satvik cuisine prepared with devotion & purity",
-    icon: Leaf,
+    icon: FaLeaf,
   },
   {
     id: 3,
     title: "Pilgrim Friendly",
     description: "Sacred, calm spaces for worship & reflection",
-    icon: Zap,
+    icon: GiByzantinTemple,
   },
   {
     id: 4,
     title: "Peaceful Surroundings",
     description: "Surrounded by untouched nature & silence",
-    icon: Sparkles,
+    icon: FaDove,
   },
 ]
 

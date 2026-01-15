@@ -124,7 +124,7 @@ export default function GalleryPreview() {
 
       {/* ===== CUSTOM LIGHTBOX ===== */}
       {lightboxOpen && (
-        <div className="fixed inset-0 'z-9999' flex items-center justify-center">
+        <div className="fixed inset-0 z-9999 flex items-center justify-center">
 
           {/* OVERLAY */}
           <div
