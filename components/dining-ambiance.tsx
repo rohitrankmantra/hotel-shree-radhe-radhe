@@ -1,5 +1,14 @@
 "use client"
 
+import dinning from "../public/foods/welcome.jpg"
+
+
+import { FaMountainSun } from "react-icons/fa6";
+import { MdForest } from "react-icons/md";
+import { FaLeaf } from "react-icons/fa";
+import { MdDining } from "react-icons/md";
+
+
 export default function DiningAmbiance() {
   return (
     <section className="relative py-20 bg-background overflow-hidden">
@@ -22,19 +31,19 @@ export default function DiningAmbiance() {
 
             <div className="space-y-4">
               <div className="flex gap-3 items-center">
-                <span className="text-2xl">🏔️</span>
+                <span className="text-2xl"><FaMountainSun /></span>
                 <p className="text-foreground">Mountain views from dining area</p>
               </div>
               <div className="flex gap-3 items-center">
-                <span className="text-2xl">🪟</span>
+                <span className="text-2xl"><MdForest /></span>
                 <p className="text-foreground">Natural lighting & ventilation</p>
               </div>
               <div className="flex gap-3 items-center">
-                <span className="text-2xl">🌿</span>
+                <span className="text-2xl"><FaLeaf /></span>
                 <p className="text-foreground">Eco-friendly dining setup</p>
               </div>
               <div className="flex gap-3 items-center">
-                <span className="text-2xl">👥</span>
+                <span className="text-2xl"><MdDining /></span>
                 <p className="text-foreground">Intimate groups or private dining</p>
               </div>
             </div>
@@ -43,7 +52,7 @@ export default function DiningAmbiance() {
           {/* Image */}
           <div className="rounded-xl overflow-hidden h-96 md:h-full">
             <img
-              src="https://images.pexels.com/photos/1144366/pexels-photo-1144366.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src={dinning.src}
               alt="Dining ambiance"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             />

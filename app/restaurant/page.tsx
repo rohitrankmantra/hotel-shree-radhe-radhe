@@ -1,7 +1,6 @@
 "use client"
 
 import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
 import RestaurantHero from "@/components/restaurant-hero"
 import MenuShowcase from "@/components/menu-showcase"
 import MenuCategories from "@/components/menu-categories"
@@ -15,7 +14,7 @@ export default function RestaurantPage() {
       <MenuShowcase />
       <MenuCategories />
       <DiningAmbiance />
-      <Footer />
+    
     </main>
   )
 }

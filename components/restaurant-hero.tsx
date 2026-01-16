@@ -1,11 +1,13 @@
 "use client"
 
+import heroImg from "../public/foods/resto-cover.jpg"
+
 export default function RestaurantHero() {
   return (
     <section className="relative h-screen pt-20 flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          src={heroImg.src}
           alt="Restaurant"
           className="w-full h-full object-cover"
         />

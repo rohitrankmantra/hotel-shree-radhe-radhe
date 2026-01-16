@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const galleryImages = [
   {
@@ -38,32 +39,7 @@ const galleryImages = [
 ];
 
 export default function GalleryPreview() {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  // Keyboard controls
-  useEffect(() => {
-    if (!lightboxOpen) return;
-
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setLightboxOpen(false);
-      if (e.key === "ArrowRight") nextImage();
-      if (e.key === "ArrowLeft") prevImage();
-    };
-
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [lightboxOpen, activeIndex]);
-
-  const nextImage = () =>
-    setActiveIndex((prev) =>
-      prev === galleryImages.length - 1 ? 0 : prev + 1
-    );
-
-  const prevImage = () =>
-    setActiveIndex((prev) =>
-      prev === 0 ? galleryImages.length - 1 : prev - 1
-    );
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   return (
     <>
@@ -90,8 +66,7 @@ export default function GalleryPreview() {
               <button
                 key={idx}
                 onClick={() => {
-                  setActiveIndex(idx);
-                  setLightboxOpen(true);
+                  setLightboxIndex(idx);
                 }}
                 className="group relative cursor-zoom-in overflow-hidden rounded-2xl h-64 sm:h-72 lg:h-80 focus:outline-none"
               >
@@ -123,52 +98,42 @@ export default function GalleryPreview() {
       </section>
 
       {/* ===== CUSTOM LIGHTBOX ===== */}
-      {lightboxOpen && (
-        <div className="fixed inset-0 z-9999 flex items-center justify-center">
-
-          {/* OVERLAY */}
-          <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            onClick={() => setLightboxOpen(false)}
+      {lightboxIndex !== null && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center">
+          <img
+            src={galleryImages[lightboxIndex].src}
+            alt=""
+            className="max-h-[85vh] max-w-[90vw] rounded-2xl object-contain"
           />
 
-          {/* CONTENT */}
-          <div className="relative z-10 max-w-6xl w-full px-6">
-            <img
-              src={galleryImages[activeIndex].src}
-              alt={galleryImages[activeIndex].alt}
-              className="mx-auto max-h-[85vh] w-auto rounded-xl shadow-2xl"
-            />
+          <button
+            onClick={() => setLightboxIndex(null)}
+            className="absolute top-6 right-6 h-12 w-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center hover:bg-white/20 transition"
+          >
+            <X className="text-white" />
+          </button>
 
-            {/* CLOSE */}
-            <button
-              onClick={() => setLightboxOpen(false)}
-              className="absolute top-4 right-4 text-white text-3xl"
-            >
-              ✕
-            </button>
+          <button
+            onClick={() =>
+              setLightboxIndex((i) =>
+                i === null ? 0 : (i - 1 + galleryImages.length) % galleryImages.length
+              )
+            }
+            className="absolute left-6 h-12 w-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center hover:bg-white/20 transition"
+          >
+            <ChevronLeft className="text-white" />
+          </button>
 
-            {/* PREV */}
-            <button
-              onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-4xl px-4"
-            >
-              ‹
-            </button>
-
-            {/* NEXT */}
-            <button
-              onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-4xl px-4"
-            >
-              ›
-            </button>
-
-            {/* CAPTION */}
-            <p className="mt-4 text-center text-white/80 text-sm">
-              {galleryImages[activeIndex].alt}
-            </p>
-          </div>
+          <button
+            onClick={() =>
+              setLightboxIndex((i) =>
+                i === null ? 0 : (i + 1) % galleryImages.length
+              )
+            }
+            className="absolute right-6 h-12 w-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center hover:bg-white/20 transition"
+          >
+            <ChevronRight className="text-white" />
+          </button>
         </div>
       )}
     </>

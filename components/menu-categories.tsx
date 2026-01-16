@@ -82,7 +82,7 @@ export default function MenuCategories() {
             >
               <div className="flex items-start justify-between mb-2">
                 <h3 className="font-serif text-lg font-bold text-foreground">{item.name}</h3>
-                {item.veg && <Leaf className="w-5 h-5 text-primary flex-shrink-0" />}
+                {item.veg && <Leaf className="w-5 h-5 text-primary shrink-0" />}
               </div>
               <p className="text-foreground/70 text-sm leading-relaxed">{item.description}</p>
             </div>

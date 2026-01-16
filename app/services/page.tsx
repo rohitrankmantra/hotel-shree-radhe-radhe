@@ -1,7 +1,7 @@
 "use client"
 
 import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+
 import ServiceHero from "@/components/service-hero"
 import ServiceCategory from "@/components/service-category"
 
@@ -14,7 +14,7 @@ export default function ServicesPage() {
       <ServiceCategory category="bhojan" title="Bhojan Services" />
       <ServiceCategory category="pilgrim" title="Pilgrim Services" />
       <ServiceCategory category="travel" title="Travel Assistance" />
-      <Footer />
+    
     </main>
   )
 }

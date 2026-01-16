@@ -3,12 +3,21 @@
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
+
+
+import twilight from "../public/rooms/twelight.jpg"
+import peak from "../public/rooms/suit.jpg"
+import forest from "../public/rooms/forest.jpg"
+import dawn from "../public/rooms/dawn.jpg"
+import serenity from "../public/rooms/serenity.jpg"
+
+
 const featuredRooms = [
   {
     id: 1,
     name: "Serenity Room",
     category: "Standard Room",
-    image: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: serenity.src,
     price: "₹2,500",
     features: ["Mountain View", "Private Balcony", "Attached Bath"],
   },
@@ -16,7 +25,7 @@ const featuredRooms = [
     id: 2,
     name: "Peak Suite",
     category: "Luxury Suite",
-    image: "https://images.pexels.com/photos/3195656/pexels-photo-3195656.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: peak.src,
     price: "₹4,500",
     features: ["Valley View", "Living Area", "Premium Amenities"],
   },
@@ -24,7 +33,7 @@ const featuredRooms = [
     id: 3,
     name: "Forest Nest",
     category: "Deluxe Room",
-    image: "https://images.pexels.com/photos/3488998/pexels-photo-3488998.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: forest.src,
     price: "₹3,200",
     features: ["Forest View", "Natural Light", "Cozy Ambiance"],
   },
@@ -32,7 +41,7 @@ const featuredRooms = [
     id: 4,
     name: "Dawn Room",
     category: "Standard Room",
-    image: "https://images.pexels.com/photos/3025517/pexels-photo-3025517.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: dawn.src,
     price: "₹2,800",
     features: ["East Facing", "Sunrise View", "Modern Furnishing"],
   },

@@ -1,7 +1,7 @@
 "use client"
 
 import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+
 import RoomDetailSlider from "@/components/room-detail-slider"
 import RoomGrid from "@/components/room-grid"
 import Amenities from "@/components/amenities"
@@ -14,7 +14,7 @@ export default function RoomsPage() {
       <RoomDetailSlider />
       <Amenities />
       <RoomGrid />
-      <Footer />
+     
     </main>
   )
 }

@@ -14,7 +14,7 @@ export default function LocationHero() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center">
-        <h1 className="font-serif text-5xl md:text-7xl font-bold text-[#21431A] mb-4 text-balance">Location</h1>
+        <h1 className="font-serif text-5xl md:text-7xl font-bold text-white mb-4 text-balance">Location</h1>
         <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
           Nestled on the sacred Yamunotri Road in the heart of Devbhoomi, Uttarakhand
         </p>

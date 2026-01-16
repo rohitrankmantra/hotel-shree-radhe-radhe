@@ -2,6 +2,8 @@
 
 import { Check } from "lucide-react"
 
+import satvik from "../public/foods/satvik.jpg"
+
 export default function MenuShowcase() {
   return (
     <section className="py-20 bg-background">
@@ -10,7 +12,7 @@ export default function MenuShowcase() {
           {/* Image */}
           <div className="rounded-xl overflow-hidden h-96 md:h-full">
             <img
-              src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src={satvik.src}
               alt="Vegetarian meal"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -32,21 +34,21 @@ export default function MenuShowcase() {
 
             <div className="space-y-4">
               <div className="flex gap-4 items-start">
-                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                <Check className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-foreground">Organic & Fresh</p>
                   <p className="text-sm text-foreground/60">Locally sourced ingredients</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                <Check className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-foreground">Traditional Methods</p>
                   <p className="text-sm text-foreground/60">Prepared using age-old recipes</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                <Check className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-foreground">Mindfully Made</p>
                   <p className="text-sm text-foreground/60">With care and intention</p>

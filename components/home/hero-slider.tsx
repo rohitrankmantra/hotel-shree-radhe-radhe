@@ -38,13 +38,6 @@ export default function HeroSlider() {
     }, 5500)
   }
 
-  useEffect(() => {
-    startAutoplay()
-    return () => {
-      if (autoplayRef.current) clearInterval(autoplayRef.current)
-    }
-  }, [])
-
   const next = () => {
     setCurrent((prev) => (prev + 1) % heroImages.length)
     startAutoplay()
@@ -55,12 +48,32 @@ export default function HeroSlider() {
     startAutoplay()
   }
 
+  /* 🔑 Autoplay on mount */
+  useEffect(() => {
+    startAutoplay()
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current)
+    }
+  }, [])
+
+  /* ⌨️ Keyboard navigation */
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") next()
+      if (e.key === "ArrowLeft") prev()
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [])
+
   return (
     <div className="relative w-full h-screen min-h-[75vh] overflow-hidden">
+      {/* Slides */}
       {heroImages.map((image, idx) => (
         <div
           key={idx}
-          className={`absolute inset-0 transition-all duration-1500ms ease-out ${
+          className={`absolute inset-0 transition-all duration-[1500ms ease-out ${
             idx === current ? "opacity-100 scale-105" : "opacity-0 scale-100"
           }`}
         >
@@ -69,11 +82,12 @@ export default function HeroSlider() {
             alt={image.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-black/50 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-black/50" />
         </div>
       ))}
 
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
+      {/* Content */}
+      <div className="absolute inset-0 z-20 flex items-center justify-center text-center px-6">
         <div className="max-w-3xl">
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3">
             {heroImages[current].title}
@@ -83,7 +97,7 @@ export default function HeroSlider() {
             {heroImages[current].subtitle}
           </p>
 
-          <div className="hidden sm:block mt-10 relative z-30">
+          <div className="hidden sm:block mt-10">
             <Link
               href="/contact"
               className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground
@@ -96,9 +110,11 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      <div className="absolute inset-0 z-10 flex items-center justify-between px-4 sm:px-10 pointer-events-none">
+      {/* Arrows */}
+      <div className="absolute inset-0 z-30 flex items-center justify-between px-4 sm:px-10 pointer-events-none">
         <button
           onClick={prev}
+          aria-label="Previous slide"
           className="pointer-events-auto p-3 rounded-full bg-black/40 hover:bg-black/60 text-white transition"
         >
           <ChevronLeft size={28} />
@@ -106,12 +122,14 @@ export default function HeroSlider() {
 
         <button
           onClick={next}
+          aria-label="Next slide"
           className="pointer-events-auto p-3 rounded-full bg-black/40 hover:bg-black/60 text-white transition"
         >
           <ChevronRight size={28} />
         </button>
       </div>
 
+      {/* Mobile CTA */}
       <div className="absolute bottom-24 w-full flex justify-center z-30 sm:hidden">
         <Link
           href="/contact"
@@ -122,7 +140,8 @@ export default function HeroSlider() {
         </Link>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      {/* Dots */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-3">
         {heroImages.map((_, idx) => (
           <button
             key={idx}
@@ -133,6 +152,7 @@ export default function HeroSlider() {
             className={`h-3 rounded-full transition-all ${
               idx === current ? "bg-white w-8" : "bg-white/50 w-3"
             }`}
+            aria-label={`Go to slide ${idx + 1}`}
           />
         ))}
       </div>

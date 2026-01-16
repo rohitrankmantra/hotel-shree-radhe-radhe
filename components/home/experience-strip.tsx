@@ -1,9 +1,9 @@
 "use client"
 
 
-import { GiMountains } from "react-icons/gi";
+import { FaMountainSun } from "react-icons/fa6";
 import { FaLeaf } from "react-icons/fa6";
-import { GiByzantinTemple } from "react-icons/gi";
+import { MdTempleHindu } from "react-icons/md";
 import { FaDove } from "react-icons/fa";
 
 const experiences = [
@@ -11,7 +11,7 @@ const experiences = [
     id: 1,
     title: "Mountain Stay",
     description: "Comfortable rooms with breathtaking Himalayan views",
-    icon: GiMountains,
+    icon: FaMountainSun,
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const experiences = [
     id: 3,
     title: "Pilgrim Friendly",
     description: "Sacred, calm spaces for worship & reflection",
-    icon: GiByzantinTemple,
+    icon: MdTempleHindu,
   },
   {
     id: 4,

@@ -103,7 +103,7 @@ export default function IntroductionSection() {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover p-1.5 sm:p-2 transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full rounded-xl object-cover p-1.5 sm:p-2 transition-transform duration-700 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

@@ -2,6 +2,15 @@
 
 import { Heart } from "lucide-react"
 
+
+import cozy from "../public/gallery/cozy.jpg"
+import forest from "../public/gallery/forest.jpg"
+import luxury from "../public/gallery/luxury.jpg"
+import mountain from "../public/gallery/mountain.jpg"
+import nourishment from "../public/gallery/nourish.jpg"
+import spiritual from "../public/gallery/spritual.jpg"
+
+
 export default function GalleryStories() {
   return (
     <section className="py-20 bg-muted/30">
@@ -14,37 +23,37 @@ export default function GalleryStories() {
           {[
             {
               image:
-                "https://images.pexels.com/photos/3370037/pexels-photo-3370037.jpeg?auto=compress&cs=tinysrgb&w=600",
+                mountain.src,
               title: "Mountain Serenity",
               description: "Waking up to the majesty of snow-capped peaks and mist-covered valleys.",
             },
             {
               image:
-                "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=600",
+              cozy.src,
               title: "Cozy Comfort",
               description: "Finding warmth and peace in thoughtfully designed rooms.",
             },
             {
               image:
-                "https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600",
+                nourishment.src,
               title: "Pure Nourishment",
               description: "Savoring satvik meals that nourish body and soul.",
             },
             {
               image:
-                "https://images.pexels.com/photos/3195656/pexels-photo-3195656.jpeg?auto=compress&cs=tinysrgb&w=600",
+                luxury.src,
               title: "Luxury & Nature",
               description: "Experiencing premium hospitality amidst pristine surroundings.",
             },
             {
               image:
-                "https://images.pexels.com/photos/3025517/pexels-photo-3025517.jpeg?auto=compress&cs=tinysrgb&w=600",
+                spiritual.src,
               title: "Spiritual Awakening",
               description: "Finding inner peace through pilgrimage and contemplation.",
             },
             {
               image:
-                "https://images.pexels.com/photos/3488998/pexels-photo-3488998.jpeg?auto=compress&cs=tinysrgb&w=600",
+                forest.src,
               title: "Forest Embrace",
               description: "Surrounded by the healing energy of pine forests.",
             },
