@@ -3,77 +3,92 @@
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
+import room1 from "@/public/rooms/hotel-room1.jpeg"
+import room2 from "@/public/rooms/hotel-room6.jpeg"
+import room3 from "@/public/rooms/hotel-room3.jpeg"
+import room4 from "@/public/rooms/hotel-room7.jpeg"
 
+type Room = {
+  id: number
+  name: string
+  category: string
+  image: string
+  price: string
+  features: string[]
+}
 
-import twilight from "../public/rooms/twelight.jpg"
-import peak from "../public/rooms/suit.jpg"
-import forest from "../public/rooms/forest.jpg"
-import dawn from "../public/rooms/dawn.jpg"
-import serenity from "../public/rooms/serenity.jpg"
-
-
-const featuredRooms = [
+const featuredRooms: Room[] = [
   {
     id: 1,
-    name: "Serenity Room",
-    category: "Standard Room",
-    image: serenity.src,
+    name: "Standard Double Room ",
+    category: "Standard Double Room (Blue/Gold)",
+    image: room1.src,
     price: "₹2,500",
     features: ["Mountain View", "Private Balcony", "Attached Bath"],
   },
   {
     id: 2,
-    name: "Peak Suite",
-    category: "Luxury Suite",
-    image: peak.src,
+    name: "Quadruple / Family Room",
+    category: "Quadruple / Family Room",
+    image: room2.src,
     price: "₹4,500",
-    features: ["Valley View", "Living Area", "Premium Amenities"],
+    features: ["King/Queen Bed", "Padded Headboard", "Nightstand with Glassware"],
   },
   {
     id: 3,
-    name: "Forest Nest",
-    category: "Deluxe Room",
-    image: forest.src,
+    name: "Deluxe Double Room (pink Wood)",
+    category: "Deluxe Double Room (pink Wood)",
+    image: room3.src,
     price: "₹3,200",
-    features: ["Forest View", "Natural Light", "Cozy Ambiance"],
+    features: ["Two Double Beds", "Shared Headboard Console", "Tiled Flooring"],
   },
   {
     id: 4,
-    name: "Dawn Room",
-    category: "Standard Room",
-    image: dawn.src,
+    name: "Standard Double Room (Red)",
+    category: "Standard Double Room (Pink)",
+    image: room4.src,
     price: "₹2,800",
-    features: ["East Facing", "Sunrise View", "Modern Furnishing"],
+    features: ["King/Queen Bed", "Integrated Power Outlets", "Coordinated Linens"],
   },
 ]
 
 export default function RoomDetailSlider() {
-  const [current, setCurrent] = useState<number>(0)
-  const autoplayRef = useRef<NodeJS.Timeout | null>(null)
+  const [current, setCurrent] = useState(0)
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
     autoplayRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % featuredRooms.length)
     }, 6000)
+
     return () => {
       if (autoplayRef.current) clearInterval(autoplayRef.current)
     }
   }, [])
 
-  const next = () => setCurrent((prev) => (prev + 1) % featuredRooms.length)
-  const prev = () => setCurrent((prev) => (prev - 1 + featuredRooms.length) % featuredRooms.length)
+  const next = () =>
+    setCurrent((prev) => (prev + 1) % featuredRooms.length)
+
+  const prev = () =>
+    setCurrent((prev) => (prev - 1 + featuredRooms.length) % featuredRooms.length)
 
   return (
     <section className="relative h-screen flex items-center bg-background">
-      <div className="absolute inset-0 flex">
+      <div className="absolute inset-0 flex flex-col md:flex-row">
         {/* Image Side */}
         <div className="w-full md:w-3/5 relative overflow-hidden">
           {featuredRooms.map((room, idx) => (
             <div
-              key={idx}
-              className={`absolute inset-0 transition-opacity duration-700 ${idx === current ? "opacity-100" : "opacity-0"}`}
+              key={room.id}
+              className={`absolute inset-0 transition-opacity duration-700 ${
+                idx === current ? "opacity-100" : "opacity-0"
+              }`}
             >
-              <img src={room.image || "/placeholder.svg"} alt={room.name} className="w-full h-full object-cover" />
+              <img
+                src={room.image}
+                alt={room.name}
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
@@ -85,8 +100,12 @@ export default function RoomDetailSlider() {
               <p className="text-accent text-sm font-medium mb-2 uppercase tracking-widest">
                 {featuredRooms[current].category}
               </p>
-              <h2 className="font-serif text-5xl text-[#22441A] font-bold  mb-4">{featuredRooms[current].name}</h2>
-              <p className="text-3xl text-accent font-semibold">{featuredRooms[current].price}</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#22441A] font-bold mb-4">
+                {featuredRooms[current].name}
+              </h2>
+              <p className="text-3xl text-accent font-semibold">
+                {featuredRooms[current].price}
+              </p>
               <p className="text-foreground/60 text-sm mt-2">per night</p>
             </div>
 
@@ -121,7 +140,11 @@ export default function RoomDetailSlider() {
                 <button
                   key={idx}
                   onClick={() => setCurrent(idx)}
-                  className={`transition-all ${idx === current ? "w-8 h-1 bg-accent" : "w-1 h-1 bg-border hover:bg-foreground/30"}`}
+                  className={`transition-all rounded-full ${
+                    idx === current
+                      ? "w-8 h-1 bg-accent"
+                      : "w-1 h-1 bg-border hover:bg-foreground/30"
+                  }`}
                 />
               ))}
             </div>

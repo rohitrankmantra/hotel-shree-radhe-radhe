@@ -3,64 +3,13 @@
 import { useState } from "react"
 import { Users, Bed } from "lucide-react"
 
-import twilight from "../public/rooms/twelight.jpg"
-import peak from "../public/rooms/suit.jpg"
-import forest from "../public/rooms/forest.jpg"
-import dawn from "../public/rooms/dawn.jpg"
-import serenity from "../public/rooms/serenity.jpg"
+// ✅ IMAGES IMPORTED FROM CODE #1
+import room1 from "@/public/rooms/hotel-room1.jpeg"
+import room2 from "@/public/rooms/hotel-room6.jpeg"
+import room3 from "@/public/rooms/hotel-room3.jpeg"
+import room4 from "@/public/rooms/hotel-room7.jpeg"
 
 import BookingModal from "./BookingModel"
-
-const allRooms = [
-  {
-    id: 1,
-    name: "Serenity Room",
-    image: serenity.src,
-    capacity: "2 Guests",
-    bed: "Queen Bed",
-    price: "₹2,500",
-  },
-  {
-    id: 2,
-    name: "Peak Suite",
-    image: peak.src,
-    capacity: "4 Guests",
-    bed: "King Bed + Sofa",
-    price: "₹4,500",
-  },
-  {
-    id: 3,
-    name: "Forest Nest",
-    image: forest.src,
-    capacity: "2 Guests",
-    bed: "Twin Beds",
-    price: "₹3,200",
-  },
-  {
-    id: 4,
-    name: "Dawn Room",
-    image: dawn.src,
-    capacity: "2 Guests",
-    bed: "Queen Bed",
-    price: "₹2,800",
-  },
-  {
-    id: 5,
-    name: "Twilight Room",
-    image: twilight.src,
-    capacity: "3 Guests",
-    bed: "King Bed",
-    price: "₹3,500",
-  },
-  {
-    id: 6,
-    name: "Harmony Suite",
-    image: serenity.src,
-    capacity: "2 Guests",
-    bed: "Queen Bed",
-    price: "₹3,800",
-  },
-]
 
 interface Room {
   id: number
@@ -70,6 +19,63 @@ interface Room {
   bed: string
   price: string
 }
+
+/**
+ * DATA COMES FROM CODE #1
+ * Extra cards are duplicated as instructed
+ */
+const allRooms: Room[] = [
+  {
+    id: 1,
+    name: "Standard Double Room",
+    image: room1.src,
+    capacity: "2 Guests",
+    bed: "Queen Bed",
+    price: "₹2,500",
+  },
+  {
+    id: 2,
+    name: "Quadruple / Family Room",
+    image: room2.src,
+    capacity: "4 Guests",
+    bed: "King / Queen Bed",
+    price: "₹4,500",
+  },
+  {
+    id: 3,
+    name: "Deluxe Double Room (Pink Wood)",
+    image: room3.src,
+    capacity: "2 Guests",
+    bed: "Double Beds",
+    price: "₹3,200",
+  },
+  {
+    id: 4,
+    name: "Standard Double Room (Red)",
+    image: room4.src,
+    capacity: "2 Guests",
+    bed: "Queen Bed",
+    price: "₹2,800",
+  },
+
+  // 🔁 DUPLICATED CONTENT (remaining boxes)
+  {
+    id: 5,
+    name: "Standard Double Room",
+    image: room1.src,
+    capacity: "2 Guests",
+    bed: "Queen Bed",
+    price: "₹2,500",
+  },
+  {
+    id: 6,
+    name: "Quadruple / Family Room",
+    image: room2.src,
+    capacity: "4 Guests",
+    bed: "King / Queen Bed",
+    price: "₹4,500",
+  },
+]
 
 export default function RoomGrid() {
   const [open, setOpen] = useState(false)
