@@ -3,12 +3,6 @@
 import { useState } from "react"
 import { Users, Bed } from "lucide-react"
 
-// ✅ IMAGES IMPORTED FROM CODE #1
-import room1 from "@/public/rooms/hotel-room1.jpeg"
-import room2 from "@/public/rooms/hotel-room6.jpeg"
-import room3 from "@/public/rooms/hotel-room3.jpeg"
-import room4 from "@/public/rooms/hotel-room7.jpeg"
-
 import BookingModal from "./BookingModel"
 
 interface Room {
@@ -20,15 +14,11 @@ interface Room {
   price: string
 }
 
-/**
- * DATA COMES FROM CODE #1
- * Extra cards are duplicated as instructed
- */
 const allRooms: Room[] = [
   {
     id: 1,
     name: "Standard Double Room",
-    image: room1.src,
+    image: "/rooms/hotel-room1.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
     price: "₹2,500",
@@ -36,7 +26,7 @@ const allRooms: Room[] = [
   {
     id: 2,
     name: "Quadruple / Family Room",
-    image: room2.src,
+    image: "/rooms/hotel-room6.jpeg",
     capacity: "4 Guests",
     bed: "King / Queen Bed",
     price: "₹4,500",
@@ -44,7 +34,7 @@ const allRooms: Room[] = [
   {
     id: 3,
     name: "Deluxe Double Room (Pink Wood)",
-    image: room3.src,
+    image: "/rooms/hotel-room3.jpeg",
     capacity: "2 Guests",
     bed: "Double Beds",
     price: "₹3,200",
@@ -52,17 +42,17 @@ const allRooms: Room[] = [
   {
     id: 4,
     name: "Standard Double Room (Red)",
-    image: room4.src,
+    image: "/rooms/hotel-room7.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
     price: "₹2,800",
   },
 
-  // 🔁 DUPLICATED CONTENT (remaining boxes)
+  // 🔁 Duplicated cards
   {
     id: 5,
     name: "Standard Double Room",
-    image: room1.src,
+    image: "/rooms/hotel-room1.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
     price: "₹2,500",
@@ -70,7 +60,7 @@ const allRooms: Room[] = [
   {
     id: 6,
     name: "Quadruple / Family Room",
-    image: room2.src,
+    image: "/rooms/hotel-room6.jpeg",
     capacity: "4 Guests",
     bed: "King / Queen Bed",
     price: "₹4,500",
