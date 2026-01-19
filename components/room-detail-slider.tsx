@@ -3,11 +3,6 @@
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
-import room1 from "@/public/rooms/hotel-room1.jpeg"
-import room2 from "@/public/rooms/hotel-room6.jpeg"
-import room3 from "@/public/rooms/hotel-room3.jpeg"
-import room4 from "@/public/rooms/hotel-room7.jpeg"
-
 type Room = {
   id: number
   name: string
@@ -20,9 +15,9 @@ type Room = {
 const featuredRooms: Room[] = [
   {
     id: 1,
-    name: "Standard Double Room ",
+    name: "Standard Double Room",
     category: "Standard Double Room (Blue/Gold)",
-    image: room1.src,
+    image: "/rooms/hotel-room1.jpeg",
     price: "₹2,500",
     features: ["Mountain View", "Private Balcony", "Attached Bath"],
   },
@@ -30,15 +25,15 @@ const featuredRooms: Room[] = [
     id: 2,
     name: "Quadruple / Family Room",
     category: "Quadruple / Family Room",
-    image: room2.src,
+    image: "/rooms/hotel-room6.jpeg",
     price: "₹4,500",
     features: ["King/Queen Bed", "Padded Headboard", "Nightstand with Glassware"],
   },
   {
     id: 3,
-    name: "Deluxe Double Room (pink Wood)",
-    category: "Deluxe Double Room (pink Wood)",
-    image: room3.src,
+    name: "Deluxe Double Room (Pink Wood)",
+    category: "Deluxe Double Room (Pink Wood)",
+    image: "/rooms/hotel-room3.jpeg",
     price: "₹3,200",
     features: ["Two Double Beds", "Shared Headboard Console", "Tiled Flooring"],
   },
@@ -46,7 +41,7 @@ const featuredRooms: Room[] = [
     id: 4,
     name: "Standard Double Room (Red)",
     category: "Standard Double Room (Pink)",
-    image: room4.src,
+    image: "/rooms/hotel-room7.jpeg",
     price: "₹2,800",
     features: ["King/Queen Bed", "Integrated Power Outlets", "Coordinated Linens"],
   },
