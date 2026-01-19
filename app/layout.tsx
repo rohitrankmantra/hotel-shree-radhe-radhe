@@ -5,6 +5,9 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import WhatsAppButton from "@/components/WhatsAppButton"
+
+
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -50,6 +53,7 @@ export default function RootLayout({
       <body className={`${cinzel.variable} ${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <Navbar/>
         {children}
+         <WhatsAppButton />
         <Footer/>
         <Analytics />
       </body>

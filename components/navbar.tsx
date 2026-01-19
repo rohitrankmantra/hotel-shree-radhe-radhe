@@ -6,7 +6,11 @@ import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 
-/* ---------------- NAV ITEM (UNDERLINE EFFECT) ---------------- */
+import satvik from "../public/foods/food2.jpg"
+import pilgrim from "../public/nature/surr.jpg"
+import travel from "../public/services/tour.png"
+
+/* ---------------- NAV ITEM ---------------- */
 function NavItem({
   href,
   label,
@@ -27,16 +31,15 @@ function NavItem({
       >
         {label}
       </span>
-
       <span
-        className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ease-out
+        className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300
         ${active ? "w-full" : "w-0 group-hover:w-full"}`}
       />
     </Link>
   )
 }
 
-/* ---------------- MAIN NAVBAR ---------------- */
+/* ---------------- NAVBAR ---------------- */
 export default function Navbar() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
@@ -53,47 +56,46 @@ export default function Navbar() {
   const servicesMenu = [
     {
       label: "Luxury Rooms & Suites",
-      href: "/services#stay",
+      href: "/services/stay",
       description: "Premium comfort with Himalayan views",
       image: "/hotel-services.jpg",
     },
     {
-      label: "Satvik Cuisine",
-      href: "/services#bhojan",
-      description: "Traditional Pahari & wellness vegetarian food",
-      image: "/hotel-services.jpg",
+      label: "Satvik Bhojan",
+      href: "/services/bhojan",
+      description: "Traditional Pahadi & wellness vegetarian food",
+      image: satvik.src,
     },
     {
       label: "Pilgrim Assistance",
-      href: "/services#pilgrim",
+      href: "/services/pilgrim",
       description: "Complete support for Yamunotri Yatra",
-      image: "/hotel-services.jpg",
+      image: pilgrim.src,
     },
     {
       label: "Travel Services",
-      href: "/services#travel",
+      href: "/services/travel",
       description: "Transfers, tours & Himalayan travel",
-      image: "/hotel-services.jpg",
+      image: travel.src,
     },
   ]
 
   return (
-    <nav className="fixed top-0 z-50 w-full py-3  md:py-1 bg-background/85 backdrop-blur-lg border-b border-border/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-2">
+    <nav className="fixed top-0 z-50 w-full bg-background/85 backdrop-blur-lg border-b border-border/60">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex h-16 sm:h-20 items-center justify-between">
 
           {/* LOGO */}
-     <Link href="/" className="flex items-center">
-  <Image
-    src="/logo-bg.png"
-    alt="Shree Radhe Logo"
-    width={100}   
-    height={36}   
-    priority
-    className="object-contain "
-  />
-</Link>
-
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo-bg.png"
+              alt="Shree Radhe Logo"
+              width={100}
+              height={36}
+              priority
+              className="object-contain"
+            />
+          </Link>
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-9">
@@ -106,8 +108,8 @@ export default function Navbar() {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <button
-                type="button"
+              <Link
+                href="/services"
                 className={`relative flex items-center gap-1.5 text-sm font-medium transition-colors ${
                   pathname.startsWith("/services") || isServicesOpen
                     ? "text-primary"
@@ -119,8 +121,8 @@ export default function Navbar() {
                   className={`w-4 h-4 transition-transform duration-300 ${
                     isServicesOpen ? "rotate-180" : ""
                   }`}
+                  onClick={(e) => e.preventDefault()}
                 />
-
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300
                   ${
@@ -129,7 +131,7 @@ export default function Navbar() {
                       : "w-0 group-hover:w-full"
                   }`}
                 />
-              </button>
+              </Link>
 
               {/* MEGA MENU */}
               {isServicesOpen && (
@@ -198,6 +200,7 @@ export default function Navbar() {
             {[
               { href: "/", label: "Home" },
               { href: "/rooms", label: "Rooms & Stay" },
+              { href: "/services", label: "Services" },
               { href: "/restaurant", label: "Restaurant" },
               { href: "/gallery", label: "Gallery" },
               { href: "/location", label: "Location" },

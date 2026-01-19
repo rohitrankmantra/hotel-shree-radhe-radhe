@@ -2,9 +2,9 @@
 
 export default function ContactInfo() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-5">
       <div>
-        <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Contact Information</h3>
+        <h3 className="font-serif text-2xl mt-10 justify-center flex font-bold text-foreground mb-2">Contact Information</h3>
       </div>
 
       {/* Address */}

@@ -73,10 +73,11 @@ export default function RoomDetailSlider() {
     setCurrent((prev) => (prev - 1 + featuredRooms.length) % featuredRooms.length)
 
   return (
-    <section className="relative h-screen flex items-center bg-background">
-      <div className="absolute inset-0 flex flex-col md:flex-row">
+    <section className="relative min-h-screen md:h-screen flex items-center bg-background">
+      <div className="w-full flex flex-col md:flex-row md:absolute md:inset-0">
+        
         {/* Image Side */}
-        <div className="w-full md:w-3/5 relative overflow-hidden">
+        <div className="w-full md:w-3/5 relative h-[40vh] md:h-full overflow-hidden">
           {featuredRooms.map((room, idx) => (
             <div
               key={room.id}
@@ -91,6 +92,22 @@ export default function RoomDetailSlider() {
               />
             </div>
           ))}
+        </div>
+
+        {/* Mobile Navigation (Below Image, Above Content) */}
+        <div className="flex md:hidden justify-center gap-6 py-4 bg-background border-b border-border">
+          <button
+            onClick={prev}
+            className="p-3 rounded-full border border-border hover:border-accent hover:text-accent transition-all"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={next}
+            className="p-3 rounded-full border border-border hover:border-accent hover:text-accent transition-all"
+          >
+            <ChevronRight size={24} />
+          </button>
         </div>
 
         {/* Content Side */}
@@ -118,8 +135,8 @@ export default function RoomDetailSlider() {
               ))}
             </div>
 
-            {/* Navigation */}
-            <div className="flex gap-4 pt-6">
+            {/* Desktop Navigation (Hidden on Mobile) */}
+            <div className="hidden md:flex gap-4 pt-6">
               <button
                 onClick={prev}
                 className="p-3 rounded-full border border-border hover:border-accent hover:text-accent transition-all"
@@ -135,7 +152,7 @@ export default function RoomDetailSlider() {
             </div>
 
             {/* Dots */}
-            <div className="flex gap-2 pt-4">
+            <div className="flex gap-2 pt-4 justify-center md:justify-start">
               {featuredRooms.map((_, idx) => (
                 <button
                   key={idx}

@@ -1,15 +1,16 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
 // IMAGES
 import room from "../public/services/room.jpg"
 import ring from "../public/services/ring.jpg"
-import temple from "../public/services/temple.jpg"
+import temple from "../public/services/temple.png"
 import keeping from "../public/services/keeping.jpg"
 import dining from "../public/services/dining.jpg"
-import tour from "../public/services/tour.jpg"
+import tour from "../public/services/tour.png"
 import location from "../public/services/location.jpg"
 import transport from "../public/services/transport.jpg"
 import sprituality from "../public/services/sprituality.jpg"
@@ -113,25 +114,22 @@ const serviceData: Record<string, ServiceItem[]> = {
 
 // PROPS
 interface ServiceCategoryProps {
-  category: string
+  category: "stay" | "bhojan" | "pilgrim" | "travel"
   title: string
 }
 
 export default function ServiceCategory({ category, title }: ServiceCategoryProps) {
-  const services = serviceData[category] || []
+  const services = serviceData[category]
 
   return (
     <section className={`py-20 ${category === "bhojan" ? "bg-muted/30" : "bg-background"}`}>
       <div className="max-w-7xl mx-auto px-6">
-        <h2
-          id={category}
-          className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance"
-        >
+        <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
           {title}
         </h2>
 
         <p className="text-foreground/60 mb-12 max-w-2xl">
-          Dedicated support for every aspect of your stay with us
+          Dedicated support for every aspect of your stay at Shree Radhe Radhe, Yamunotri
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -149,31 +147,34 @@ export default function ServiceCategory({ category, title }: ServiceCategoryProp
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* CONTENT */}
               <div className="p-6 bg-card">
-                <h3 className="font-serif text-xl font-bold text-foreground mb-2">
+                <h3 className="font-serif text-xl font-bold mb-2">
                   {service.title}
                 </h3>
 
-                <p className="text-foreground/70 text-sm mb-6">
+                <p className="text-sm text-foreground/70 mb-6">
                   {service.description}
                 </p>
 
                 <ul className="space-y-2 text-sm text-foreground/60">
                   {service.details.map((detail, didx) => (
-                    <li key={didx} className="flex items-start gap-2">
-                      <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                      <span>{detail}</span>
+                    <li key={didx} className="flex gap-2">
+                      <ChevronRight className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                      {detail}
                     </li>
                   ))}
                 </ul>
 
-                <button className="mt-6 w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
+                {/* PROPER ROUTE LINK */}
+                <Link
+                  href={`/services/${category}`}
+                  className="mt-6 block w-full text-center px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:opacity-90 transition"
+                >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           ))}

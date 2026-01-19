@@ -12,7 +12,14 @@ export default function LocationPage() {
     <main className="bg-background">
       <Navbar />
       <LocationHero />
-      <LocationMap />
+      
+      {/* MAP SECTION - CENTERED & CONSTRAINED */}
+      <section className="py-12 px-6">
+        <div className="max-w-4xl mx-auto">
+          <LocationMap />
+        </div>
+      </section>
+      
       <DistanceInfo />
       <RouteGuidance />
  

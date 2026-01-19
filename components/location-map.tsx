@@ -28,22 +28,18 @@ export default function LocationMap() {
   }`;
 
   return (
-    <section className="py-16 md:py-20">
-      <div className="w-full flex justify-center px-4">
-        <div
-          className="
-            relative
-            w-full
-            max-w-6xl
-            h-105
-            md:h-130
-            rounded-2xl
-            overflow-hidden
-            border border-border/60
-            shadow-sm
-            bg-muted
-          "
-        >
+    <div
+      className="
+        relative
+        w-full
+        h-72
+        rounded-2xl
+        overflow-hidden
+        border border-border/60
+        shadow-sm
+        bg-muted
+      "
+    >
           {/* MAP */}
           <iframe
             title="Hotel Radhe Radhe Yamunotri Location"
@@ -145,8 +141,6 @@ export default function LocationMap() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+    </div>
   );
 }
