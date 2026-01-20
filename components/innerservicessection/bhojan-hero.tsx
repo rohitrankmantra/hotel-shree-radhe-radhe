@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import bhojanHero from "@/public/services/bhojan-hero.jpg"
 
 export default function BhojanHero() {
   return (
@@ -9,7 +8,7 @@ export default function BhojanHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={bhojanHero}
+          src="/services/bhojan-hero.jpg"
           alt="Bhojan Seva at Shree Radhe Radhe"
           className="w-full h-full object-cover"
           fill

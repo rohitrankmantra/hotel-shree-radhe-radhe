@@ -32,7 +32,7 @@ export default function LocationMap() {
       className="
         relative
         w-full
-        h-72
+        h-96
         rounded-2xl
         overflow-hidden
         border border-border/60

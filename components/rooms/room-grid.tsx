@@ -17,7 +17,7 @@ interface Room {
 const allRooms: Room[] = [
   {
     id: 1,
-    name: "Standard Double Room",
+    name: "Standard Single Room",
     image: "/rooms/hotel-room1.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
@@ -51,7 +51,7 @@ const allRooms: Room[] = [
   // 🔁 Duplicated cards
   {
     id: 5,
-    name: "Standard Double Room",
+    name: "Standard Single Bed Room",
     image: "/rooms/hotel-room1.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
@@ -59,7 +59,7 @@ const allRooms: Room[] = [
   },
   {
     id: 6,
-    name: "Quadruple / Family Room",
+    name: "Single / Family Room",
     image: "/rooms/hotel-room6.jpeg",
     capacity: "4 Guests",
     bed: "King / Queen Bed",

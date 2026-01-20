@@ -2,9 +2,9 @@
 
 import Navbar from "@/components/navbar"
 
-import RoomDetailSlider from "@/components/room-detail-slider"
-import RoomGrid from "@/components/room-grid"
-import Amenities from "@/components/amenities"
+import RoomDetailSlider from "@/components/rooms/room-detail-slider"
+import RoomGrid from "@/components/rooms/room-grid"
+import Amenities from "@/components/rooms/amenities"
 
 export default function RoomsPage() {
   return (

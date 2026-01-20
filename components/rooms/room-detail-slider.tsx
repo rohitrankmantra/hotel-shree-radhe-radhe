@@ -17,15 +17,15 @@ const featuredRooms: Room[] = [
     id: 1,
     name: "Standard Double Room",
     category: "Standard Double Room (Blue/Gold)",
-    image: "/rooms/hotel-room1.jpeg",
+    image: "/rooms/hotel-room8.jpeg",
     price: "₹2,500",
     features: ["Mountain View", "Private Balcony", "Attached Bath"],
   },
   {
     id: 2,
-    name: "Quadruple / Family Room",
-    category: "Quadruple / Family Room",
-    image: "/rooms/hotel-room6.jpeg",
+    name: "Single / Family Room",
+    category: "Single / Family Room",
+    image: "/rooms/hotel-room9.jpeg",
     price: "₹4,500",
     features: ["King/Queen Bed", "Padded Headboard", "Nightstand with Glassware"],
   },
@@ -33,7 +33,7 @@ const featuredRooms: Room[] = [
     id: 3,
     name: "Deluxe Double Room (Pink Wood)",
     category: "Deluxe Double Room (Pink Wood)",
-    image: "/rooms/hotel-room3.jpeg",
+    image: "/rooms/hotel-room4.jpeg",
     price: "₹3,200",
     features: ["Two Double Beds", "Shared Headboard Console", "Tiled Flooring"],
   },
@@ -41,7 +41,7 @@ const featuredRooms: Room[] = [
     id: 4,
     name: "Standard Double Room (Red)",
     category: "Standard Double Room (Pink)",
-    image: "/rooms/hotel-room7.jpeg",
+    image: "/rooms/hotel-room5.jpeg",
     price: "₹2,800",
     features: ["King/Queen Bed", "Integrated Power Outlets", "Coordinated Linens"],
   },
@@ -54,7 +54,7 @@ export default function RoomDetailSlider() {
   useEffect(() => {
     autoplayRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % featuredRooms.length)
-    }, 6000)
+    }, 8000)
 
     return () => {
       if (autoplayRef.current) clearInterval(autoplayRef.current)

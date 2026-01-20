@@ -1,15 +1,28 @@
 "use client"
 
+import {
+  MapPin,
+  Phone,
+  MessageCircle,
+  Mail,
+  Clock,
+} from "lucide-react"
+
 export default function ContactInfo() {
   return (
     <div className="space-y-5">
       <div>
-        <h3 className="font-serif text-2xl mt-10 justify-center flex font-bold text-foreground mb-2">Contact Information</h3>
+        <h3 className="font-serif text-2xl mt-10 justify-center flex font-bold text-foreground mb-2">
+          Contact Information
+        </h3>
       </div>
 
       {/* Address */}
       <div className="bg-card border border-border rounded-xl p-6 hover:border-accent transition-colors">
-        <h4 className="font-serif text-lg font-semibold text-foreground mb-3">Address</h4>
+        <h4 className="font-serif text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+          <MapPin className="w-5 h-5 text-accent" />
+          Address
+        </h4>
         <p className="text-foreground/70 leading-relaxed">
           Yamunotri Road, Barkot <br />
           Uttarkashi District <br />
@@ -20,7 +33,10 @@ export default function ContactInfo() {
 
       {/* Phone */}
       <div className="bg-card border border-border rounded-xl p-6 hover:border-accent transition-colors">
-        <h4 className="font-serif text-lg font-semibold text-foreground mb-3">Phone</h4>
+        <h4 className="font-serif text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+          <Phone className="w-5 h-5 text-accent" />
+          Phone
+        </h4>
         <p className="text-foreground/70 mb-3">
           <a href="tel:+919876543210" className="hover:text-accent transition-colors">
             +91 9876 543 210
@@ -31,7 +47,10 @@ export default function ContactInfo() {
 
       {/* WhatsApp */}
       <div className="bg-card border border-border rounded-xl p-6 hover:border-accent transition-colors">
-        <h4 className="font-serif text-lg font-semibold text-foreground mb-3">WhatsApp</h4>
+        <h4 className="font-serif text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+          <MessageCircle className="w-5 h-5 text-accent" />
+          WhatsApp
+        </h4>
         <p className="text-foreground/70 mb-3">
           <a
             href="https://wa.me/919876543210"
@@ -47,7 +66,10 @@ export default function ContactInfo() {
 
       {/* Email */}
       <div className="bg-card border border-border rounded-xl p-6 hover:border-accent transition-colors">
-        <h4 className="font-serif text-lg font-semibold text-foreground mb-3">Email</h4>
+        <h4 className="font-serif text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+          <Mail className="w-5 h-5 text-accent" />
+          Email
+        </h4>
         <p className="text-foreground/70">
           <a href="mailto:info@shreRadhe.com" className="hover:text-accent transition-colors">
             info@shreRadhe.com
@@ -57,7 +79,10 @@ export default function ContactInfo() {
 
       {/* Business Hours */}
       <div className="bg-accent/10 border border-accent rounded-xl p-6">
-        <h4 className="font-serif text-lg font-semibold text-foreground mb-4">Business Hours</h4>
+        <h4 className="font-serif text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+          <Clock className="w-5 h-5 text-accent" />
+          Business Hours
+        </h4>
         <div className="space-y-2 text-foreground/70 text-sm">
           <p>Monday - Sunday: Open 24 hours</p>
           <p>Booking: Available anytime</p>

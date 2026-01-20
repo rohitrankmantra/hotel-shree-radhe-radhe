@@ -4,20 +4,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
-// IMAGES
-import room from "../public/services/room.jpg"
-import ring from "../public/services/ring.jpg"
-import temple from "../public/services/temple.png"
-import keeping from "../public/services/keeping.jpg"
-import dining from "../public/services/dining.jpg"
-import tour from "../public/services/tour.png"
-import location from "../public/services/location.jpg"
-import transport from "../public/services/transport.jpg"
-import sprituality from "../public/services/sprituality.jpg"
-import menu from "../public/services/menu.jpg"
-import veg from "../public/services/veg.jpg"
-import spritual from "../public/services/spritual.jpg"
-
 // TYPES
 interface ServiceItem {
   title: string
@@ -31,19 +17,19 @@ const serviceData: Record<string, ServiceItem[]> = {
     {
       title: "Room Service",
       description: "24/7 in-room dining and comfort services",
-      image: room.src,
+      image: "/services/room.jpg",
       details: ["In-room meals", "Laundry service", "Room maintenance", "Turndown service"],
     },
     {
       title: "Housekeeping",
       description: "Daily cleaning and maintenance",
-      image: keeping.src,
+      image: "/services/keeping.jpg",
       details: ["Daily cleaning", "Fresh linens", "Toiletries", "Room tidying"],
     },
     {
       title: "Concierge",
       description: "Personal assistance and arrangements",
-      image: ring.src,
+      image: "/services/ring.jpg",
       details: ["Information", "Reservations", "Travel planning", "Local advice"],
     },
   ],
@@ -52,19 +38,19 @@ const serviceData: Record<string, ServiceItem[]> = {
     {
       title: "Vegetarian Cuisine",
       description: "Pure satvik meals prepared daily",
-      image: veg.src,
+      image: "/services/veg.jpg",
       details: ["Organic ingredients", "Traditional recipes", "Fresh preparation", "Dietary accommodations"],
     },
     {
       title: "Room Dining",
       description: "Meals served in the comfort of your room",
-      image: dining.src,
+      image: "/services/dining.jpg",
       details: ["Breakfast service", "Lunch options", "Dinner delivery", "Special requests"],
     },
     {
       title: "Wellness Menu",
       description: "Health-conscious food options",
-      image: menu.src,
+      image: "/services/menu.jpg",
       details: ["Ayurvedic meals", "Low-calorie options", "Digestive foods", "Herbal beverages"],
     },
   ],
@@ -73,19 +59,19 @@ const serviceData: Record<string, ServiceItem[]> = {
     {
       title: "Temple Assistance",
       description: "Support for pilgrimage to Yamunotri",
-      image: temple.src,
+      image: "/services/temple.png",
       details: ["Temple coordination", "Prayer arrangements", "Guides available", "Ritual support"],
     },
     {
       title: "Spiritual Guidance",
       description: "Meditation and wellness programs",
-      image: sprituality.src,
+      image: "/services/sprituality.jpg",
       details: ["Yoga sessions", "Meditation classes", "Expert guidance", "Wellness programs"],
     },
     {
       title: "Sacred Ceremonies",
       description: "Traditional rituals and blessings",
-      image: spritual.src,
+      image: "/services/spritual.jpg",
       details: ["Prayer sessions", "Blessings", "Rituals", "Sacred practices"],
     },
   ],
@@ -94,19 +80,19 @@ const serviceData: Record<string, ServiceItem[]> = {
     {
       title: "Transportation",
       description: "Comfortable vehicle arrangements",
-      image: transport.src,
+      image: "/services/transport.jpg",
       details: ["Local travel", "Airport pickups", "Tour arrangements", "Group transport"],
     },
     {
       title: "Route Guidance",
       description: "Expert navigation and planning",
-      image: location.src,
+      image: "/services/location.jpg",
       details: ["Best routes", "Safety tips", "Local knowledge"],
     },
     {
       title: "Tour Packages",
       description: "Curated travel experiences",
-      image: tour.src,
+      image: "/services/tour.png",
       details: ["Day trips", "Multi-day tours", "Adventure packages", "Cultural tours"],
     },
   ],
@@ -168,7 +154,6 @@ export default function ServiceCategory({ category, title }: ServiceCategoryProp
                   ))}
                 </ul>
 
-                {/* PROPER ROUTE LINK */}
                 <Link
                   href={`/services/${category}`}
                   className="mt-6 block w-full text-center px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:opacity-90 transition"

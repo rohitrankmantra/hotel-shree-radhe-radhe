@@ -1,35 +1,33 @@
 "use client"
 
-
-import { FaMountainSun } from "react-icons/fa6";
-import { FaLeaf } from "react-icons/fa6";
-import { MdTempleHindu } from "react-icons/md";
-import { FaDove } from "react-icons/fa";
+import {  GiTempleGate, GiPeaceDove } from "react-icons/gi"
+import { GiMountains } from "react-icons/gi";
+import { GiMapleLeaf } from "react-icons/gi";
 
 const experiences = [
   {
     id: 1,
     title: "Mountain Stay",
     description: "Comfortable rooms with breathtaking Himalayan views",
-    icon: FaMountainSun,
+    icon: GiMountains, 
   },
   {
     id: 2,
     title: "Pure Vegetarian Bhojan",
     description: "Satvik cuisine prepared with devotion & purity",
-    icon: FaLeaf,
+    icon: GiMapleLeaf, // Outline/light leaf icon
   },
   {
     id: 3,
     title: "Pilgrim Friendly",
     description: "Sacred, calm spaces for worship & reflection",
-    icon: MdTempleHindu,
+    icon: GiTempleGate, // Outline/light temple icon
   },
   {
     id: 4,
     title: "Peaceful Surroundings",
     description: "Surrounded by untouched nature & silence",
-    icon: FaDove,
+    icon: GiPeaceDove, // Outline/light dove icon
   },
 ]
 
@@ -44,7 +42,7 @@ export default function ExperienceStrip() {
             Shree Radhe Radhe
           </span>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight">
             Experiences That
             <br className="hidden sm:block" />
             <span className="text-primary">Nourish Body & Soul</span>
@@ -59,14 +57,7 @@ export default function ExperienceStrip() {
 
       {/* GRID → ONE ROW ON DESKTOP */}
       <div className="max-w-7xl mx-auto px-6">
-        <div
-          className="
-            grid gap-6 md:gap-8
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-4
-          "
-        >
+        <div className="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {experiences.map((exp) => {
             const Icon = exp.icon
 
@@ -75,18 +66,18 @@ export default function ExperienceStrip() {
                 key={exp.id}
                 className="group transition-all duration-300 hover:-translate-y-2"
               >
-                <div className="bg-card border border-border rounded-2xl p-8 h-full flex flex-col hover:shadow-xl hover:border-primary/40 transition-all">
+                <div className="bg-card border border-border rounded-2xl p-8 h-full flex flex-col items-start hover:shadow-2xl hover:border-primary/40 transition-all">
                   
                   {/* ICON */}
                   <div className="mb-6">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition">
-                      <Icon className="w-7 h-7 text-primary drop-shadow" />
+                    <div className="w-16 h-16 rounded-2xl bg-linear-to-tr from-primary/10 via-primary/20 to-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+                      <Icon className="w-8 h-8 text-primary" />
                     </div>
                   </div>
 
                   {/* CONTENT */}
                   <div className="flex-1">
-                    <h3 className="font-serif text-xl font-semibold mb-3">
+                    <h3 className="font-serif text-xl font-semibold mb-2">
                       {exp.title}
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">

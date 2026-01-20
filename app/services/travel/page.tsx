@@ -1,13 +1,8 @@
 "use client"
 
-import TravelHero from "@/components/travel-hero"
+import TravelHero from "@/components/innerservicessection/travel-hero"
 import Image from "next/image"
 import Link from "next/link"
-
-// Images
-import transport from "@/public/services/transport.jpg"
-import location from "@/public/services/location.jpg"
-import tour from "@/public/services/tour.png"
 
 export default function TravelServicePage() {
   return (
@@ -37,9 +32,11 @@ export default function TravelServicePage() {
           </div>
 
           <Image
-            src={transport}
+            src="/services/transport.jpg"
             alt="Travel and transportation services"
             className="rounded-2xl object-cover w-full h-115"
+            width={1200}
+            height={800}
             priority
           />
         </div>
@@ -95,9 +92,11 @@ export default function TravelServicePage() {
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <Image
-            src={location}
+            src="/services/location.jpg"
             alt="Route guidance for Yamunotri"
             className="rounded-2xl object-cover w-full h-105"
+            width={1200}
+            height={800}
           />
 
           <div>
@@ -131,82 +130,51 @@ export default function TravelServicePage() {
           </div>
 
           <Image
-            src={tour}
+            src="/services/tour.png"
             alt="Tour packages for pilgrims"
             className="rounded-2xl object-cover w-full h-105"
+            width={1200}
+            height={800}
           />
         </div>
       </section>
 
-      {/* WHO THIS IS FOR */}
-      <section className="bg-background border-t py-24">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h3 className="font-serif text-3xl md:text-4xl font-bold mb-8">
-            Who Benefits Most from Travel Services?
+      {/* CTA */}
+      <section className="relative py-28">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/bg.png')" }}
+        />
+        <div className="absolute inset-0 backdrop-blur-[1px]" />
+
+        <div className="relative max-w-5xl mx-auto px-6 text-center">
+          <span className="inline-block mb-4 text-sm tracking-widest uppercase text-primary/80">
+            Guided • Safe • Memorable
+          </span>
+
+          <h3 className="font-serif text-4xl md:text-5xl font-semibold text-primary leading-tight">
+            Travel in Comfort & Safety with Shree Radhe Radhe
           </h3>
 
-          <p className="text-foreground/70 max-w-3xl mx-auto mb-14">
-            Ideal for pilgrims seeking safety, convenience, and guided experiences while exploring Yamunotri and surrounding sacred locations.
+          <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-black/70 leading-relaxed">
+            Enjoy a <strong className="text-black">hassle-free journey</strong> with expert guidance, safe transportation, and
+            curated tours — making your Yamunotri pilgrimage truly memorable.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              "Char Dham Pilgrims",
-              "Families with Children",
-              "Elderly Devotees",
-              "Solo Travelers",
-              "Group Tours",
-              "Adventure & Spiritual Seekers",
-            ].map((item, i) => (
-              <span
-                key={i}
-                className="px-5 py-2.5 rounded-full border border-border text-sm bg-muted/40"
-              >
-                {item}
-              </span>
-            ))}
+          <div className="mt-10">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center
+                rounded-full border border-primary/30
+                px-10 py-3.5 text-primary font-medium
+                hover:bg-primary hover:text-white
+                transition-all duration-300"
+            >
+              Enquire About Travel Services
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-    <section className="relative py-28">
-  {/* Background */}
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg.png')" }}
-  />
-  <div className="absolute inset-0  backdrop-blur-[1px]" />
-
-  {/* Content */}
-  <div className="relative max-w-5xl mx-auto px-6 text-center">
-    <span className="inline-block mb-4 text-sm tracking-widest uppercase text-primary/80">
-      Guided • Safe • Memorable
-    </span>
-
-    <h3 className="font-serif text-4xl md:text-5xl font-semibold text-primary leading-tight">
-      Travel in Comfort & Safety with Shree Radhe Radhe
-    </h3>
-
-    <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-black/70 leading-relaxed">
-      Enjoy a <strong className="text-black">hassle-free journey</strong> with expert guidance, safe transportation, and
-      curated tours — making your Yamunotri pilgrimage truly memorable.
-    </p>
-
-    <div className="mt-10">
-      <Link
-        href="/contact"
-        className="inline-flex items-center justify-center
-          rounded-full border border-primary/30
-          px-10 py-3.5 text-primary font-medium
-          hover:bg-primary hover:text-white
-          transition-all duration-300"
-      >
-        Enquire About Travel Services
-      </Link>
-    </div>
-  </div>
-</section>
     </>
   )
 }

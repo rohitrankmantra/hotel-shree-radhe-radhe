@@ -1,6 +1,5 @@
 "use client"
 
-import dinning from "../public/foods/welcome.jpg"
 
 
 import { FaMountainSun } from "react-icons/fa6";
@@ -52,7 +51,7 @@ export default function DiningAmbiance() {
           {/* Image */}
           <div className="rounded-xl overflow-hidden h-96 md:h-full">
             <img
-              src={dinning.src}
+              src="/foods/dining.jpeg"
               alt="Dining ambiance"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             />

@@ -1,13 +1,8 @@
 "use client"
 
-import StayHero from "@/components/stay-hero"
+import StayHero from "@/components/innerservicessection/stay-hero"
 import Image from "next/image"
 import Link from "next/link"
-
-// Images
-import room from "@/public/services/room.jpg"
-import keeping from "@/public/services/keeping.jpg"
-import ring from "@/public/services/ring.jpg"
 
 export default function StayServicePage() {
   return (
@@ -39,9 +34,11 @@ export default function StayServicePage() {
           </div>
 
           <Image
-            src={room}
+            src="/services/room.jpg"
             alt="Rooms at Shree Radhe Radhe Yamunotri"
             className="rounded-2xl object-cover w-full h-115"
+            width={1200}
+            height={800}
             priority
           />
         </div>
@@ -99,9 +96,11 @@ export default function StayServicePage() {
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <Image
-            src={keeping}
+            src="/services/keeping.jpg"
             alt="Hygiene and housekeeping"
             className="rounded-2xl object-cover w-full h-105"
+            width={1200}
+            height={800}
           />
 
           <div>
@@ -146,83 +145,53 @@ export default function StayServicePage() {
           </div>
 
           <Image
-            src={ring}
+            src="/services/ring.jpg"
             alt="Guest assistance services"
             className="rounded-2xl object-cover w-full h-105"
+            width={1200}
+            height={800}
           />
         </div>
       </section>
 
-      {/* WHO THIS IS FOR */}
-      <section className="bg-background border-t py-24">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h3 className="font-serif text-3xl md:text-4xl font-bold mb-8">
-            Who Is Our Stay Best Suited For?
+      {/* FINAL CTA */}
+      <section className="relative py-28">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/bg.png')" }}
+        />
+        <div className="absolute inset-0 backdrop-blur-[1px]" />
+
+        <div className="relative max-w-5xl mx-auto px-6 text-center">
+          <span className="inline-block mb-4 text-sm tracking-widest uppercase text-primary/80">
+            Comfort • Peace • Care
+          </span>
+
+          <h3 className="font-serif text-4xl md:text-5xl font-semibold text-primary leading-tight">
+            A Stay That Respects Your Journey
           </h3>
 
-          <p className="text-foreground/70 max-w-3xl mx-auto mb-14">
-            Our accommodation is ideal for guests who value calmness,
-            cleanliness, and spiritual balance during their Yamunotri visit.
+          <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-black/70 leading-relaxed">
+            Choose a place that understands the spiritual and physical demands of
+            Yamunotri. Experience{" "}
+            <strong className="text-black">warmth, care, and peace</strong> at
+            Shree Radhe Radhe.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              "Char Dham Pilgrims",
-              "Senior Citizens",
-              "Families with Elders",
-              "Spiritual Travelers",
-              "Small Groups",
-              "Devotional Tours",
-            ].map((item, i) => (
-              <span
-                key={i}
-                className="px-5 py-2.5 rounded-full border border-border text-sm bg-muted/40"
-              >
-                {item}
-              </span>
-            ))}
+          <div className="mt-10">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center
+                rounded-full border border-primary/30
+                px-10 py-3.5 text-primary font-medium
+                hover:bg-primary hover:text-white
+                transition-all duration-300"
+            >
+              Enquire for Accommodation
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* FINAL CTA */}
-    <section className="relative py-28">
-  {/* Background */}
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg.png')" }}
-  />
-  <div className="absolute inset-0 backdrop-blur-[1px]" />
-
-  {/* Content */}
-  <div className="relative max-w-5xl mx-auto px-6 text-center">
-    <span className="inline-block mb-4 text-sm tracking-widest uppercase text-primary/80">
-      Comfort • Peace • Care
-    </span>
-
-    <h3 className="font-serif text-4xl md:text-5xl font-semibold text-primary leading-tight">
-      A Stay That Respects Your Journey
-    </h3>
-
-    <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-black/70 leading-relaxed">
-      Choose a place that understands the spiritual and physical demands of
-      Yamunotri. Experience <strong className="text-black">warmth, care, and peace</strong> at Shree Radhe Radhe.
-    </p>
-
-    <div className="mt-10">
-      <Link
-        href="/contact"
-        className="inline-flex items-center justify-center
-          rounded-full border border-primary/30
-          px-10 py-3.5 text-primary font-medium
-          hover:bg-primary hover:text-white
-          transition-all duration-300"
-      >
-        Enquire for Accommodation
-      </Link>
-    </div>
-  </div>
-</section>
     </>
   )
 }
