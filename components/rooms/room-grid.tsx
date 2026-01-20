@@ -18,7 +18,7 @@ const allRooms: Room[] = [
   {
     id: 1,
     name: "Standard Single Room",
-    image: "/rooms/hotel-room1.jpeg",
+    image: "/Rooms/hotel-room1.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
     price: "₹2,500",
@@ -26,7 +26,7 @@ const allRooms: Room[] = [
   {
     id: 2,
     name: "Quadruple / Family Room",
-    image: "/rooms/hotel-room6.jpeg",
+    image: "/Rooms/hotel-room6.jpeg",
     capacity: "4 Guests",
     bed: "King / Queen Bed",
     price: "₹4,500",
@@ -34,7 +34,7 @@ const allRooms: Room[] = [
   {
     id: 3,
     name: "Deluxe Double Room (Pink Wood)",
-    image: "/rooms/hotel-room3.jpeg",
+    image: "/Rooms/hotel-room3.jpeg",
     capacity: "2 Guests",
     bed: "Double Beds",
     price: "₹3,200",
@@ -42,7 +42,7 @@ const allRooms: Room[] = [
   {
     id: 4,
     name: "Standard Double Room (Red)",
-    image: "/rooms/hotel-room7.jpeg",
+    image: "/Rooms/hotel-room7.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
     price: "₹2,800",
@@ -52,7 +52,7 @@ const allRooms: Room[] = [
   {
     id: 5,
     name: "Standard Single Bed Room",
-    image: "/rooms/hotel-room1.jpeg",
+    image: "/Rooms/hotel-room1.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
     price: "₹2,500",
@@ -60,7 +60,7 @@ const allRooms: Room[] = [
   {
     id: 6,
     name: "Single / Family Room",
-    image: "/rooms/hotel-room6.jpeg",
+    image: "/Rooms/hotel-room6.jpeg",
     capacity: "4 Guests",
     bed: "King / Queen Bed",
     price: "₹4,500",

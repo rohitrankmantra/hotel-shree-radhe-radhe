@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import Link from "next/link"
+import {motion} from "framer-motion"
 
 type Room = {
   id: number
@@ -161,9 +163,11 @@ export default function RoomDetailSlider() {
               ))}
             </div>
 
-            <button className="mt-8 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity w-full md:w-auto">
-              Reserve Now
-            </button>
+               <motion.div whileHover={{ scale: 1.03 }} className="inline-block pt-2 sm:pt-3">
+              <Link href="/rooms" className="px-6 sm:px-7 py-3 sm:py-3.5 bg-primary text-primary-foreground rounded-full text-sm sm:text-base md:text-lg font-medium shadow-lg hover:bg-primary/90 transition-all flex items-center gap-2.5 group">
+                Reserve Your Stay
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>

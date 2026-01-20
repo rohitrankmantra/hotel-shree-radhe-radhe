@@ -18,30 +18,25 @@ export const metadata: Metadata = {
   title: "Hotel Shree Radhe Radhe | Yamunotri, Uttarakhand",
   description:
     "Premium nature-inspired hotel near Yamunotri Dham. Experience spiritual serenity in the Himalayas with satvik vegetarian cuisine and pilgrimage services.",
-  generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/logo-bg.png", // <-- your custom favicon
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/my-favicon-dark-32x32.png", // <-- optional dark version
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/my-favicon.svg", // <-- optional svg version
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
-  },
-  openGraph: {
-    title: "Hotel Shree Radhe Radhe",
-    description: "Stay close to Yamunotri Dham",
-    type: "website",
+    apple: "/my-apple-icon.png", // optional apple touch icon
   },
 }
+
 
 export default function RootLayout({
   children,
