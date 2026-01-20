@@ -2,15 +2,6 @@
 
 import { Heart } from "lucide-react"
 
-
-import cozy from "../public/gallery/cozy.jpg"
-import forest from "../public/gallery/forest.jpg"
-import luxury from "../public/gallery/luxury.jpg"
-import mountain from "../public/gallery/mountain.jpg"
-import nourishment from "../public/gallery/nourish.jpg"
-import spiritual from "../public/gallery/spritual.jpg"
-
-
 export default function GalleryStories() {
   return (
     <section className="py-20 bg-muted/30">
@@ -22,38 +13,32 @@ export default function GalleryStories() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
-              image:
-                mountain.src,
+              image: "/gallery/mountain.jpg",
               title: "Mountain Serenity",
               description: "Waking up to the majesty of snow-capped peaks and mist-covered valleys.",
             },
             {
-              image:
-              cozy.src,
+              image: "/gallery/cozy.jpg",
               title: "Cozy Comfort",
               description: "Finding warmth and peace in thoughtfully designed rooms.",
             },
             {
-              image:
-                nourishment.src,
+              image: "/gallery/nourish.jpg",
               title: "Pure Nourishment",
               description: "Savoring satvik meals that nourish body and soul.",
             },
             {
-              image:
-                luxury.src,
+              image: "/gallery/luxury.jpg",
               title: "Luxury & Nature",
               description: "Experiencing premium hospitality amidst pristine surroundings.",
             },
             {
-              image:
-                spiritual.src,
+              image: "/gallery/spritual.jpg",
               title: "Spiritual Awakening",
               description: "Finding inner peace through pilgrimage and contemplation.",
             },
             {
-              image:
-                forest.src,
+              image: "/gallery/forest.jpg",
               title: "Forest Embrace",
               description: "Surrounded by the healing energy of pine forests.",
             },
@@ -73,8 +58,12 @@ export default function GalleryStories() {
                 </div>
               </div>
               <div className="p-6 bg-card">
-                <h3 className="font-serif text-lg font-bold text-foreground mb-2">{story.title}</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">{story.description}</p>
+                <h3 className="font-serif text-lg font-bold text-foreground mb-2">
+                  {story.title}
+                </h3>
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  {story.description}
+                </p>
               </div>
             </div>
           ))}

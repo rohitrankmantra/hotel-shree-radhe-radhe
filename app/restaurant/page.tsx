@@ -1,10 +1,10 @@
 "use client"
 
 import Navbar from "@/components/navbar"
-import RestaurantHero from "@/components/restaurant-hero"
-import MenuShowcase from "@/components/menu-showcase"
-import MenuCategories from "@/components/menu-categories"
-import DiningAmbiance from "@/components/dining-ambiance"
+import RestaurantHero from "@/components/restaurant/restaurant-hero"
+import MenuShowcase from "@/components/restaurant/menu-showcase"
+import MenuCategories from "@/components/restaurant/menu-categories"
+import DiningAmbiance from "@/components/restaurant/dining-ambiance"
 
 export default function RestaurantPage() {
   return (

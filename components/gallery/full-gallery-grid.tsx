@@ -3,39 +3,26 @@
 import { useState } from "react";
 import { Filter, X, ChevronLeft, ChevronRight } from "lucide-react";
 
-// NATURE
-import nature1 from "../public/nature/nature2.jpg";
-import nature2 from "../public/nature/nature3.jpg";
-import nature3 from "../public/nature/nature4.jpg";
-
-// ROOMS
-import room1 from "../public/Rooms/hotel-room1.jpeg";
-import room2 from "../public/Rooms/hotel-room2.jpeg";
-import room3 from "../public/Rooms/hotel-room3.jpeg";
-
-// FOOD
-import food1 from "../public/foods/food1.jpg";
-import food2 from "../public/foods/food2.jpg";
-import food3 from "../public/foods/food3.jpg";
-
-// SURROUNDINGS
-import surroundings1 from "../public/nature/surr.jpg";
-import surroundings2 from "../public/nature/surr2.jpg";
-import surroundings3 from "../public/nature/surrounding3.jpg";
-
 const galleryImages = [
-  { id: 1, category: "nature", src: nature3.src, alt: "Mountain landscape" },
-  { id: 2, category: "rooms", src: room1.src, alt: "Room interior" },
-  { id: 3, category: "food", src: food1.src, alt: "Food preparation" },
-  { id: 4, category: "surroundings", src: surroundings1.src, alt: "Hotel surroundings" },
-  { id: 5, category: "rooms", src: room2.src, alt: "Luxury room" },
-  { id: 6, category: "nature", src: nature2.src, alt: "Mountain view" },
-  { id: 7, category: "food", src: food2.src, alt: "Healthy food" },
-  { id: 8, category: "surroundings", src: surroundings2.src, alt: "Hotel surroundings" },
-  { id: 9, category: "rooms", src: room3.src, alt: "Room detail" },
-  { id: 10, category: "nature", src: nature1.src, alt: "Nature landscape" },
-  { id: 11, category: "food", src: food3.src, alt: "Meal presentation" },
-  { id: 12, category: "surroundings", src: surroundings3.src, alt: "Hotel area" },
+  // NATURE
+  { id: 1, category: "nature", src: "/nature/nature4.jpg", alt: "Mountain landscape" },
+  { id: 6, category: "nature", src: "/nature/nature3.jpg", alt: "Mountain view" },
+  { id: 10, category: "nature", src: "/nature/nature2.jpg", alt: "Nature landscape" },
+
+  // ROOMS
+  { id: 2, category: "rooms", src: "/Rooms/hotel-room1.jpeg", alt: "Room interior" },
+  { id: 5, category: "rooms", src: "/Rooms/hotel-room2.jpeg", alt: "Luxury room" },
+  { id: 9, category: "rooms", src: "/Rooms/hotel-room3.jpeg", alt: "Room detail" },
+
+  // FOOD
+  { id: 3, category: "food", src: "/foods/food1.jpg", alt: "Food preparation" },
+  { id: 7, category: "food", src: "/foods/food2.jpg", alt: "Healthy food" },
+  { id: 11, category: "food", src: "/foods/food3.jpg", alt: "Meal presentation" },
+
+  // SURROUNDINGS
+  { id: 4, category: "surroundings", src: "/nature/surr.jpg", alt: "Hotel surroundings" },
+  { id: 8, category: "surroundings", src: "/nature/surr2.jpg", alt: "Hotel surroundings" },
+  { id: 12, category: "surroundings", src: "/nature/surrounding3.jpg", alt: "Hotel area" },
 ];
 
 export default function FullGalleryGrid() {

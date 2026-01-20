@@ -2,8 +2,8 @@
 
 import Navbar from "@/components/navbar"
 
-import ServiceHero from "@/components/service-hero"
-import ServiceCategory from "@/components/service-category"
+import ServiceHero from "@/components/services/service-hero"
+import ServiceCategory from "@/components/services/service-category"
 
 export default function ServicesPage() {
   return (

@@ -87,14 +87,15 @@ export default function Navbar() {
 
           {/* LOGO */}
           <Link href="/" className="flex items-center">
-            <Image
-              src="/logo-bg.png"
-              alt="Shree Radhe Logo"
-              width={100}
-              height={36}
-              priority
-              className="object-contain"
-            />
+        <Image
+  src="/logo-bg.png"
+  alt="Shree Radhe Logo"
+  width={200}
+  height={80}
+  priority
+  className="h-16 w-auto sm:h-20 object-contain"
+/>
+
           </Link>
 
           {/* DESKTOP NAV */}

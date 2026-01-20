@@ -2,10 +2,11 @@
 
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import ContactHero from "@/components/contact-hero";
-import ContactForm from "@/components/contact-form";
-import ContactInfo from "@/components/contact-info";
-import LocationMap from "@/components/location-map";
+import ContactHero from "@/components/contact/contact-hero";
+import ContactForm from "@/components/contact/contact-form";
+import ContactInfo from "@/components/contact/contact-info";
+import LocationMap from "@/components/location/location-map";
+import ContactLocation from "@/components/contact/contact-location";
 
 export default function ContactPage() {
   return (
@@ -29,7 +30,7 @@ export default function ContactPage() {
 
             {/* MAP */}
             <div className="md:col-span-2">
-              <LocationMap />
+              <ContactLocation/>
             </div>
 
           </div>

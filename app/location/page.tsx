@@ -2,10 +2,10 @@
 
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import LocationHero from "@/components/location-hero"
-import LocationMap from "@/components/location-map"
-import DistanceInfo from "@/components/distance-info"
-import RouteGuidance from "@/components/route-guidance"
+import LocationHero from "@/components/location/location-hero"
+import LocationMap from "@/components/location/location-map"
+import DistanceInfo from "@/components/location/distance-info"
+import RouteGuidance from "@/components/location/route-guidance"
 
 export default function LocationPage() {
   return (
@@ -15,7 +15,7 @@ export default function LocationPage() {
       
       {/* MAP SECTION - CENTERED & CONSTRAINED */}
       <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <LocationMap />
         </div>
       </section>

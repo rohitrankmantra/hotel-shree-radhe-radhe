@@ -1,12 +1,11 @@
 "use client"
-import hero from "../public/location-hero.jpg"
 
 export default function LocationHero() {
   return (
     <section className="relative h-screen pt-20 flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src={hero.src}
+          src="/location-hero.jpg"
           alt="Location hero"
           className="w-full h-full object-cover"
         />
