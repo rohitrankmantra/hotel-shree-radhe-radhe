@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import travelHero from "@/public/services/travel.jpg"
+import travelHero from "@/public/trek/hero.jpeg"
 
 export default function TravelHero() {
   return (

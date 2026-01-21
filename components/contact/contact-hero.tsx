@@ -6,7 +6,7 @@ export default function ContactHero() {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/contact/contact-hero.jpeg"
+          src="/trek/trek10.jpeg"
           alt="Contact Shree Radhe Radhe Yamunotri"
           className="w-full h-full object-cover"
         />

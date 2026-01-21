@@ -56,10 +56,10 @@ export default function BookForm() {
 
   return (
     <div className="w-full flex justify-center px-2 py-4">
-      <div className="w-full max-w-lg bg-white rounded-xl shadow-md border border-black/5 px-4 py-4 sm:px-6 sm:py-6">
+      <div className="w-full max-w-xl md:max-w-3xl bg-white rounded-xl shadow-md border border-black/5 px-4 py-4 sm:px-6 sm:py-6">
         <div className="text-center mb-3 sm:mb-4">
-          <h2 className="text-sm font-semibold">Room Booking</h2>
-          <p className="text-[11px] text-gray-500">Reserve your stay</p>
+          <h2 className="text-base sm:text-lg font-semibold">Room Booking</h2>
+          <p className="text-xs text-gray-500">Reserve your stay</p>
         </div>
 
         {submitted ? (
@@ -126,7 +126,7 @@ export default function BookForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full sm:flex-1 rounded-xl bg-gradient-to-r from-[#22441A] to-[#2d5a24] text-white py-3 text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex justify-center items-center gap-2 mt-2 sm:mt-0 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
+                className="w-full sm:flex-1 rounded-xl bg-gradient-to-r from-[#22441A] to-[#2d5a24] text-white py-3 text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex justify-center items-center gap-2 mt-2 sm:mt-0 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
               >
                 {loading ? (
                   <>
@@ -163,13 +163,13 @@ function Input({
 }) {
   return (
     <div className="flex flex-col">
-      <label className="text-[11px] text-gray-500">{label}</label>
+      <label className="text-[11px] sm:text-sm text-gray-500">{label}</label>
       <input
         type={type}
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full mt-1 px-2 py-2 rounded-md border border-gray-200 text-sm focus:outline-none focus:border-[#22441A]"
+        className="w-full mt-1 px-3 py-2 sm:px-4 sm:py-3 rounded-md border border-gray-200 text-sm sm:text-base focus:outline-none focus:border-[#22441A]"
       />
     </div>
   );
@@ -189,17 +189,17 @@ function GlassDate({
 
   return (
     <div className="flex flex-col">
-      <label className="text-[11px] text-gray-500">{label}</label>
+      <label className="text-[11px] sm:text-sm text-gray-500">{label}</label>
 
       <div
         onClick={() => ref.current?.showPicker()}
         className="mt-1 cursor-pointer"
       >
-        <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/40 backdrop-blur-xl border border-white/30">
-          <CalendarDays className="w-4 h-4 text-gray-600" />
+        <div className="flex items-center gap-3 px-3 py-2 sm:px-4 sm:py-3 rounded-xl bg-white/40 backdrop-blur-xl border border-white/30">
+          <CalendarDays className="w-5 h-5 text-gray-600" />
           <div className="flex flex-col">
-            <span className="text-[10px] text-gray-500">{label}</span>
-            <span className="text-sm font-medium text-gray-800">
+            <span className="text-[10px] sm:text-xs text-gray-500">{label}</span>
+            <span className="text-sm sm:text-base font-medium text-gray-800">
               {value || "Select date"}
             </span>
           </div>
@@ -227,11 +227,11 @@ function GuestCounter({
 }) {
   return (
     <div className="flex flex-col flex-1">
-      <label className="text-[11px] text-gray-500">Guests</label>
-      <div className="mt-1 flex items-center justify-between px-3 py-2 rounded-xl bg-white/40 backdrop-blur-xl border border-white/30">
-        <div className="flex items-center gap-2">
-          <Users className="w-4 h-4 text-gray-600" />
-          <span className="text-sm font-medium">
+      <label className="text-[11px] sm:text-sm text-gray-500">Guests</label>
+      <div className="mt-1 flex items-center justify-between px-3 py-2 sm:px-4 sm:py-3 rounded-xl bg-white/40 backdrop-blur-xl border border-white/30">
+        <div className="flex items-center gap-3">
+          <Users className="w-5 h-5 text-gray-600" />
+          <span className="text-sm sm:text-base font-medium">
             {guests} {guests === 1 ? "Guest" : "Guests"}
           </span>
         </div>
@@ -240,16 +240,16 @@ function GuestCounter({
           <button
             type="button"
             onClick={() => onChange(Math.max(1, guests - 1))}
-            className="w-7 h-7 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center"
+            className="w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center"
           >
-            <Minus size={12} />
+            <Minus size={14} />
           </button>
           <button
             type="button"
             onClick={() => onChange(guests + 1)}
-            className="w-7 h-7 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center"
+            className="w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center"
           >
-            <Plus size={12} />
+            <Plus size={14} />
           </button>
         </div>
       </div>

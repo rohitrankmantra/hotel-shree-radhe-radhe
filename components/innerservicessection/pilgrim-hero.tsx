@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import pilgrimHero from "@/public/services/pilgrim-hero.jpg"
+import pilgrimHero from "@/public/temple/hero.jpeg"
 
 export default function PilgrimHero() {
   return (

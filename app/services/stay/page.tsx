@@ -34,7 +34,7 @@ export default function StayServicePage() {
           </div>
 
           <Image
-            src="/services/room.jpg"
+            src="/rooms/hotel-room1.jpeg"
             alt="Rooms at Shree Radhe Radhe Yamunotri"
             className="rounded-2xl object-cover w-full h-115"
             width={1200}
@@ -96,7 +96,7 @@ export default function StayServicePage() {
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <Image
-            src="/services/keeping.jpg"
+            src="/rooms/view3.jpeg"
             alt="Hygiene and housekeeping"
             className="rounded-2xl object-cover w-full h-105"
             width={1200}
@@ -124,34 +124,33 @@ export default function StayServicePage() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h3 className="font-serif text-3xl font-bold mb-6">
-              Guest Assistance & Local Support
-            </h3>
+       <div className="grid lg:grid-cols-2 gap-16 items-center">
+  <div>
+    <h3 className="font-serif text-3xl font-bold mb-6">
+      Impeccable Washroom Hygiene
+    </h3>
 
-            <p className="text-foreground/75 leading-relaxed mb-4">
-              Our team is available to support you beyond your room. Whether
-              it’s guidance for temple visits, weather advice, or travel
-              coordination, we assist with patience and clarity.
-            </p>
+    <p className="text-foreground/75 leading-relaxed mb-4">
+      We prioritize your comfort with spotless and well-maintained washrooms. Our team ensures cleanliness, hygiene, and freshness throughout your visit.
+    </p>
 
-            <ul className="space-y-3 text-foreground/70 text-sm">
-              <li>• Temple timing guidance</li>
-              <li>• Assistance for senior citizens</li>
-              <li>• Local route & safety information</li>
-              <li>• Emergency coordination support</li>
-            </ul>
-          </div>
+    <ul className="space-y-3 text-foreground/70 text-sm">
+      <li>• Daily deep cleaning & sanitization</li>
+      <li>• Stocked hygiene essentials</li>
+      <li>• Quick maintenance response</li>
+      <li>• Safe & pleasant environment for all visitors</li>
+    </ul>
+  </div>
 
-          <Image
-            src="/services/ring.jpg"
-            alt="Guest assistance services"
-            className="rounded-2xl object-cover w-full h-105"
-            width={1200}
-            height={800}
-          />
-        </div>
+  <Image
+    src="/rooms/washroom.jpeg"
+    alt="Clean and well-maintained washroom"
+    className="rounded-2xl object-cover w-full h-105"
+    width={1200}
+    height={800}
+  />
+</div>
+
       </section>
 
       {/* FINAL CTA */}

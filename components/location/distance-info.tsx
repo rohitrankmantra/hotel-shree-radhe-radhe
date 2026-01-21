@@ -10,12 +10,12 @@ export default function DistanceInfo() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { location: "Yamunotri Temple", distance: "6 km", time: "15 mins" },
-            { location: "Dehradun", distance: "250 km", time: "6-7 hours" },
-            { location: "Rishikesh", distance: "150 km", time: "4 hours" },
-            { location: "Haridwar", distance: "170 km", time: "4-5 hours" },
-            { location: "Delhi", distance: "350 km", time: "8-9 hours" },
-            { location: "Chandigarh", distance: "280 km", time: "6-7 hours" },
+            { location: "Yamunotri Temple", distance: "40 km approx. (35 km by transport + 5 km walk)" },
+            { location: "Dehradun", distance: "180 km approx." },
+            { location: "Rishikesh", distance: "150 km approx." },
+            { location: "Haridwar", distance: "250 km approx." },
+            { location: "Delhi", distance: "420 km approx." },
+            { location: "Triveni Ghat Gangani", distance: "400 km approx." },
           ].map((item, idx) => (
             <div
               key={idx}
@@ -24,7 +24,7 @@ export default function DistanceInfo() {
               <p className="text-foreground/60 text-sm mb-2">Distance from</p>
               <h3 className="font-serif text-2xl font-bold text-foreground mb-4">{item.location}</h3>
               <p className="text-accent font-semibold text-lg mb-2">{item.distance}</p>
-              <p className="text-foreground/70 text-sm">Approximately {item.time}</p>
+          
             </div>
           ))}
         </div>

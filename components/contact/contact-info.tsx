@@ -39,7 +39,7 @@ export default function ContactInfo() {
         </h4>
         <p className="text-foreground/70 mb-3">
           <a href="tel:+919876543210" className="hover:text-accent transition-colors">
-            +91 9876 543 210
+            +91 63953 05738
           </a>
         </p>
         <p className="text-sm text-foreground/60">Available 24/7</p>

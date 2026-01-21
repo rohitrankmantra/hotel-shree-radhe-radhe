@@ -3,7 +3,7 @@
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import GalleryHero from "@/components/gallery/gallery-hero"
-import FullGalleryGrid from "@/components/gallery/full-gallery-grid"
+import GalleryGrid from "@/components/gallery/gallery-grid"
 import GalleryStories from "@/components/gallery/gallery-stories"
 
 export default function GalleryPage() {
@@ -11,9 +11,9 @@ export default function GalleryPage() {
     <main className="bg-background">
       <Navbar />
       <GalleryHero />
-      <FullGalleryGrid />
+      <GalleryGrid />
       <GalleryStories />
- 
+      <Footer />
     </main>
   )
 }

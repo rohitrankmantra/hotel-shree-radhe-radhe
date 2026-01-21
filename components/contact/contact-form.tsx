@@ -2,12 +2,14 @@
 
 import type React from "react"
 import { useState } from "react"
+import emailjs from "@emailjs/browser"
 import {
   User,
   Mail,
   Phone,
   MessageSquare,
   Tag,
+  Loader2,
 } from "lucide-react"
 
 export default function ContactForm() {
@@ -19,6 +21,8 @@ export default function ContactForm() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -27,13 +31,39 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
+    setLoading(true)
+    setError("")
+
+    // EmailJS credentials
+    const serviceId = "service_91eedpj"
+    const templateId = "template_3qn8msa"
+    const publicKey = "WfDbmrI0Hsat8MYOj"
+
+    // Prepare template parameters matching your EmailJS template variables
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+    }
+
+    try {
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      setSubmitted(true)
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-      setSubmitted(false)
-    }, 3000)
+      setTimeout(() => {
+        setSubmitted(false)
+      }, 5000)
+    } catch (err: any) {
+      console.error("EmailJS Error:", err)
+      const errorMessage = err?.text || err?.message || "Failed to send message. Please try again later."
+      setError(errorMessage)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -53,6 +83,11 @@ export default function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
+          {error && (
+            <div className="bg-red-500/10 border border-red-500 rounded-lg p-4 text-red-500 text-sm">
+              {error}
+            </div>
+          )}
           {/* Name & Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -156,9 +191,17 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="w-full bg-accent text-accent-foreground py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
+            disabled={loading}
+            className="w-full bg-accent text-accent-foreground py-3 rounded-lg font-medium hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            Send Message
+            {loading ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              "Send Message"
+            )}
           </button>
         </form>
       )}

@@ -121,23 +121,14 @@ export default function Footer() {
                 >
                   <Phone className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                   <span className="relative">
-                    +91 9876 543 210
+                    +91 63953 05738
                     <span className="absolute left-0 -bottom-1 h-px w-0 bg-primary group-hover:w-full transition-all duration-300" />
                   </span>
                 </a>
               </li>
 
               <li>
-                <a
-                  href="https://wa.me/919876543210"
-                  className="group flex items-center gap-3 text-background/75 hover:text-white transition-all"
-                >
-                  <MessageCircle className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
-                  <span className="relative">
-                    WhatsApp Support
-                    <span className="absolute left-0 -bottom-1 h-px w-0 bg-primary group-hover:w-full transition-all duration-300" />
-                  </span>
-                </a>
+               
               </li>
             </ul>
           </div>

@@ -1,142 +1,237 @@
 "use client";
 
 import { useState } from "react";
-import { Filter, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import TravelHero from "@/components/innerservicessection/travel-hero";
+import Image from "next/image";
+import Link from "next/link";
 
-const galleryImages = [
-  // NATURE
-  { id: 1, category: "nature", src: "/nature/nature4.jpg", alt: "Mountain landscape" },
-  { id: 6, category: "nature", src: "/nature/nature3.jpg", alt: "Mountain view" },
-  { id: 10, category: "nature", src: "/nature/nature2.jpg", alt: "Nature landscape" },
-
-  // ROOMS
-  { id: 2, category: "rooms", src: "/Rooms/hotel-room1.jpeg", alt: "Room interior" },
-  { id: 5, category: "rooms", src: "/Rooms/hotel-room2.jpeg", alt: "Luxury room" },
-  { id: 9, category: "rooms", src: "/Rooms/hotel-room3.jpeg", alt: "Room detail" },
-
-  // FOOD
-  { id: 3, category: "food", src: "/foods/food1.jpg", alt: "Food preparation" },
-  { id: 7, category: "food", src: "/foods/food2.jpg", alt: "Healthy food" },
-  { id: 11, category: "food", src: "/foods/food3.jpg", alt: "Meal presentation" },
-
-  // SURROUNDINGS
-  { id: 4, category: "surroundings", src: "/nature/surr.jpg", alt: "Hotel surroundings" },
-  { id: 8, category: "surroundings", src: "/nature/surr2.jpg", alt: "Hotel surroundings" },
-  { id: 12, category: "surroundings", src: "/nature/surrounding3.jpg", alt: "Hotel area" },
-];
-
-export default function FullGalleryGrid() {
-  const [activeFilter, setActiveFilter] = useState("all");
+export default function TravelServicePage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const filteredImages =
-    activeFilter === "all"
-      ? galleryImages
-      : galleryImages.filter((img) => img.category === activeFilter);
+  const galleryImages = [
+    "/trek/trek1.jpeg",
+    "/trek/trek4.jpeg",
+    "/trek/trek6.jpeg",
+    "/trek/trek11.jpeg",
+    "/trek/trek9.jpeg",
+    "/trek/trek10.jpeg",
+    "/trek/trek4.jpeg",
+    "/trek/trek6.jpeg",
+    "/trek/hero.jpeg",
+    "/trek/trek3.jpeg",
+  ];
 
   return (
-    <section className="relative py-20 overflow-hidden bg-white">
-      {/* SVG RADIAL BLUR MESH BACKGROUND */}
-      <svg
-        className="absolute inset-0 -z-10 h-full w-full"
-        preserveAspectRatio="none"
-        viewBox="0 0 1200 800"
-      >
-        <defs>
-          <filter id="blur">
-            <feGaussianBlur stdDeviation="90" />
-          </filter>
-        </defs>
+    <>
+      {/* HERO */}
+      <TravelHero />
 
-        <circle cx="200" cy="200" r="220" fill="#000" opacity="0.12" filter="url(#blur)" />
-        <circle cx="1000" cy="250" r="200" fill="#000" opacity="0.10" filter="url(#blur)" />
-        <circle cx="600" cy="700" r="260" fill="#000" opacity="0.08" filter="url(#blur)" />
-      </svg>
+      {/* INTRODUCTION */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Seamless Travel & Guided Tours
+            </h2>
+            <p className="text-foreground/75 leading-relaxed mb-6">
+              Traveling in the high-altitude terrain of Yamunotri can be challenging. Our Travel Services ensure safe, organized, and comfortable movement for every pilgrim visiting Shree Radhe Radhe.
+            </p>
+            <p className="text-foreground/75 leading-relaxed mb-6">
+              From transportation to route guidance and curated tour packages, we provide everything you need to explore Yamunotri without stress.
+            </p>
+            <p className="text-foreground/75 leading-relaxed">
+              Our goal is to let you focus on your spiritual journey while we take care of logistics, safety, and convenience.
+            </p>
+          </div>
+          <Image
+            src="/trek/trek3.jpeg"
+            alt="Travel and transportation services"
+            className="rounded-2xl object-cover w-full h-[28rem]"
+            width={1200}
+            height={800}
+            priority
+          />
+        </div>
+      </section>
 
-      <div className="relative max-w-6xl mx-auto px-6">
-        {/* FILTER BUTTONS */}
-        <div className="flex flex-wrap gap-4 mb-12 justify-center">
-          {["all", "nature", "rooms", "food", "surroundings"].map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 rounded-full font-medium transition-all capitalize flex items-center gap-2 ${
-                activeFilter === filter
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-white/90 backdrop-blur border border-black/15 hover:border-black/40"
-              }`}
-            >
-              {activeFilter === filter && <Filter className="w-4 h-4" />}
-              {filter}
-            </button>
-          ))}
+      {/* TRAVEL PHILOSOPHY */}
+      <section className="bg-muted/30 py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="font-serif text-3xl md:text-4xl font-bold text-center mb-16">
+            Our Travel Service Philosophy
+          </h3>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {[
+              { title: "Comfortable Transportation", desc: "Safe vehicles with trained drivers for local travel, airport transfers, and pilgrimage routes" },
+              { title: "Expert Route Guidance", desc: "Our team plans the best routes considering safety, weather, and convenience" },
+              { title: "Curated Tour Packages", desc: "Day trips, cultural tours, and adventure experiences designed for pilgrims" },
+              { title: "Group & Individual Travel", desc: "Flexible arrangements for solo travelers, families, and groups" },
+              { title: "Safety & Assistance", desc: "Medical assistance, guides, and support throughout your journey" },
+              { title: "Convenience & Planning", desc: "We handle schedules, stops, and logistics so you can enjoy the journey stress-free" },
+            ].map((item, i) => (
+              <div key={i} className="bg-background border border-border rounded-2xl p-8 hover:shadow-md transition">
+                <h4 className="font-semibold text-lg mb-3">{item.title}</h4>
+                <p className="text-sm text-foreground/70 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ROUTE GUIDANCE & TOURS */}
+      <section className="max-w-7xl mx-auto px-6 py-24 space-y-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <Image
+            src="/trek/trek7.jpeg"
+            alt="Route guidance for Yamunotri"
+            className="rounded-2xl object-cover w-full h-[26rem]"
+            width={1200}
+            height={800}
+          />
+          <div>
+            <h3 className="font-serif text-3xl font-bold mb-6">Expert Route Guidance</h3>
+            <p className="text-foreground/75 leading-relaxed mb-4">
+              Navigating Yamunotri can be challenging. Our guides provide clear instructions, safety tips, and local insights to ensure every journey is smooth and secure.
+            </p>
+            <ul className="space-y-3 text-sm text-foreground/70">
+              <li>• Best trekking and driving routes</li>
+              <li>• Weather and terrain advisory</li>
+              <li>• Safety check-ins and support</li>
+              <li>• Assistance for elderly and first-time pilgrims</li>
+            </ul>
+          </div>
         </div>
 
-        {/* GALLERY GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-5 auto-rows-fr">
-          {filteredImages.map((img, idx) => (
-            <div
-              key={img.id}
-              onClick={() => setLightboxIndex(idx)}
-              className={`group relative overflow-hidden rounded-2xl cursor-pointer ${
-                idx % 7 === 0 ? "md:col-span-2 md:row-span-2" : ""
-              }`}
-            >
-              <div className="aspect-square bg-neutral-100">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h3 className="font-serif text-3xl font-bold mb-6">Curated Tour Packages</h3>
+            <p className="text-foreground/75 leading-relaxed mb-4">
+              Explore Yamunotri and surrounding sacred sites through thoughtfully curated tours.
+            </p>
+            <ul className="space-y-3 text-sm text-foreground/70">
+              <li>• Day trips to nearby temples</li>
+              <li>• Multi-day spiritual journeys</li>
+              <li>• Adventure and sightseeing options</li>
+              <li>• Group or private tours</li>
+            </ul>
+          </div>
+          <Image
+            src="/trek/trek8.jpeg"
+            alt="Tour packages for pilgrims"
+            className="rounded-2xl object-cover w-full h-[26rem]"
+            width={1200}
+            height={800}
+          />
+        </div>
+      </section>
+
+      {/* SYMMETRIC BENTO GALLERY WITH LIGHTBOX */}
+      <section className="bg-muted/20 py-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="font-serif text-3xl md:text-4xl font-bold text-center mb-20">
+            Journey Through Yamunotri
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[220px] gap-4">
+            {galleryImages.map((src, index) => (
+              <div
+                key={index}
+                className={`relative rounded-3xl overflow-hidden cursor-pointer group`}
+                style={{
+                  gridColumn: index === 0 ? "span 2" : index === 3 ? "span 2" : undefined,
+                  gridRow: index === 0 ? "span 2" : index === 3 ? "span 2" : undefined,
+                }}
+              >
+                <img 
+                  src={src} 
+                  alt={`Yamunotri ${index}`} 
+                  className="w-full h-full object-cover hover:scale-105 transition duration-700 cursor-pointer"
+                  onClick={() => setLightboxIndex(index)}
                 />
               </div>
+            ))}
+          </div>
 
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-5">
-                <p className="text-white text-sm font-medium">{img.alt}</p>
-              </div>
+          {/* LIGHTBOX */}
+          {lightboxIndex !== null && (
+            <div 
+              className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center"
+              onClick={() => setLightboxIndex(null)}
+            >
+              <img
+                src={galleryImages[lightboxIndex]}
+                alt=""
+                className="max-h-[85vh] max-w-[90vw] rounded-2xl object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex(null);
+                }}
+                className="absolute top-6 right-6 h-12 w-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center hover:bg-white/20 transition"
+              >
+                <X className="text-white" />
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex((i) => (i === null ? 0 : (i - 1 + galleryImages.length) % galleryImages.length));
+                }}
+                className="absolute left-6 h-12 w-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center hover:bg-white/20 transition"
+              >
+                <ChevronLeft className="text-white" />
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex((i) => (i === null ? 0 : (i + 1) % galleryImages.length));
+                }}
+                className="absolute right-6 h-12 w-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center hover:bg-white/20 transition"
+              >
+                <ChevronRight className="text-white" />
+              </button>
             </div>
-          ))}
+          )}
         </div>
-      </div>
+      </section>
 
-      {/* LIGHTBOX */}
-      {lightboxIndex !== null && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center">
-          <img
-            src={filteredImages[lightboxIndex].src}
-            alt=""
-            className="max-h-[85vh] max-w-[90vw] rounded-2xl object-contain"
-          />
+      {/* CTA */}
+      <section className="relative py-28">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/bg.png')" }}
+        />
+        <div className="absolute inset-0 backdrop-blur-[1px]" />
 
-          <button
-            onClick={() => setLightboxIndex(null)}
-            className="absolute top-6 right-6 h-12 w-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center hover:bg-white/20 transition"
-          >
-            <X className="text-white" />
-          </button>
+        <div className="relative max-w-5xl mx-auto px-6 text-center">
+          <span className="inline-block mb-4 text-sm tracking-widest uppercase text-primary/80">
+            Guided • Safe • Memorable
+          </span>
 
-          <button
-            onClick={() =>
-              setLightboxIndex((i) =>
-                i === null ? 0 : (i - 1 + filteredImages.length) % filteredImages.length
-              )
-            }
-            className="absolute left-6 h-12 w-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center hover:bg-white/20 transition"
-          >
-            <ChevronLeft className="text-white" />
-          </button>
+          <h3 className="font-serif text-4xl md:text-5xl font-semibold text-primary leading-tight">
+            Travel in Comfort & Safety with Shree Radhe Radhe
+          </h3>
 
-          <button
-            onClick={() =>
-              setLightboxIndex((i) =>
-                i === null ? 0 : (i + 1) % filteredImages.length
-              )
-            }
-            className="absolute right-6 h-12 w-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center hover:bg-white/20 transition"
-          >
-            <ChevronRight className="text-white" />
-          </button>
+          <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-black/70 leading-relaxed">
+            Enjoy a <strong className="text-black">hassle-free journey</strong> with expert guidance and curated tours.
+          </p>
+
+          <div className="mt-10">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full border border-primary/30 px-10 py-3.5 text-primary font-medium hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              Enquire About Travel Services
+            </Link>
+          </div>
         </div>
-      )}
-    </section>
+      </section>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import stayHero from "@/public/services/stay-hero.jpg"
+import stayHero from "@/public/Rooms/hero.jpeg"
 
 export default function StayHero() {
   return (
