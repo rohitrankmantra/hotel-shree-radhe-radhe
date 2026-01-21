@@ -27,9 +27,9 @@ export default function BookForm() {
     setLoading(true);
     setError("");
 
-    const serviceId = "service_91eedpj"; // attach manually
-    const templateId = "template_y6ijkh3"; // attach manually
-    const publicKey = "WfDbmrI0Hsat8MYOj"; // attach manually
+    const serviceId = "service_kw65ulh"; // attach manually
+    const templateId = "template_s4n10ds"; // attach manually
+    const publicKey = "pOzHfu0EgFqX45rSm"; // attach manually
 
     const templateParams = { ...formData };
 

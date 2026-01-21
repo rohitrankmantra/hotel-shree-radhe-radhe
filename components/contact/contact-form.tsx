@@ -37,9 +37,9 @@ export default function ContactForm() {
     setError("")
 
     // EmailJS credentials
-    const serviceId = "service_91eedpj"
-    const templateId = "template_3qn8msa"
-    const publicKey = "WfDbmrI0Hsat8MYOj"
+    const serviceId = "service_kw65ulh"
+    const templateId = "template_vvth7me"
+    const publicKey = "pOzHfu0EgFqX45rSm"
 
     // Prepare template parameters matching your EmailJS template variables
     const templateParams = {
