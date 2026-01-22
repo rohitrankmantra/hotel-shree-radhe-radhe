@@ -34,7 +34,7 @@ export default function StayServicePage() {
           </div>
 
           <Image
-            src="/rooms/hotel-room1.jpeg"
+            src="/Rooms/hotel-room1.jpeg"
             alt="Rooms at Shree Radhe Radhe Yamunotri"
             className="rounded-2xl object-cover w-full h-115"
             width={1200}
@@ -96,7 +96,7 @@ export default function StayServicePage() {
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <Image
-            src="/rooms/view3.jpeg"
+            src="/Rooms/view3.jpeg"
             alt="Hygiene and housekeeping"
             className="rounded-2xl object-cover w-full h-105"
             width={1200}
@@ -143,7 +143,7 @@ export default function StayServicePage() {
   </div>
 
   <Image
-    src="/rooms/washroom.jpeg"
+    src="/Rooms/washroom.jpeg"
     alt="Clean and well-maintained washroom"
     className="rounded-2xl object-cover w-full h-105"
     width={1200}

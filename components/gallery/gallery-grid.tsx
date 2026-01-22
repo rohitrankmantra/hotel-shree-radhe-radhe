@@ -6,13 +6,13 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 const galleryImagesData = [
   { src: "/contact/contact-hero.jpeg", category: "rooms" },
   { src: "/trek/trek1.jpeg", category: "nature" },
-  { src: "/rooms/coridoor1.jpeg", category: "rooms" },
+  { src: "/Rooms/coridoor1.jpeg", category: "rooms" },
   { src: "/trek/nature1.jpeg", category: "nature" },
   { src: "/foods/food1.jpg", category: "food" },
   { src: "/services/temple2.jpeg", category: "spiritual" },
-  { src: "/rooms/coridoor.jpeg", category: "rooms" },
+  { src: "/Rooms/coridoor.jpeg", category: "rooms" },
   { src: "/trek/nature2.jpeg", category: "nature" },
-  { src: "/rooms/hotel-room7.jpeg", category: "rooms" },
+  { src: "/Rooms/hotel-room7.jpeg", category: "rooms" },
   { src: "/trek/nature3.jpeg", category: "nature" },
 ];
 
