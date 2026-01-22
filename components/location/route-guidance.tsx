@@ -13,7 +13,10 @@ export default function RouteGuidance() {
             {
               from: "From Dehradun",
               route:
-                "Dehradun → Mussoorie → Naugaon → Purola → Barkot → Hanuman Chatti → Yamunotri",
+                "Dehradun → Mussoorie → Naugaon  → Barkot → Gangani → Hanuman Chatti → Barkot → Janki Chatti → Yamunotri",
+                  route2:
+                "Dehradun → Mussoorie → Naugaon  → Barkot → Gangani → Hanuman Chatti → Barkot → Janki Chatti → Yamunotri",
+                
               notes:
                 "Most preferred and well-maintained route with scenic mountain views. Ideal for first-time pilgrims.",
             },
