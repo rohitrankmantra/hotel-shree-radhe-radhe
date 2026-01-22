@@ -27,7 +27,7 @@ export default function RouteGuidance() {
             {
               from: "From Haridwar",
               route:
-                "Haridwar → Rishikesh → Dehradun → Mussoorie → Naugaon → Barkot → Hanuman Chatti → Yamunotri",
+                "Haridwar → Dehradun → Vikasnagar → Jamunapur → Damda →   naugaon → Barkot → Gangnani → Janki Jatti  → Yamunotri",
               notes:
                 "Traditional pilgrimage route followed by Char Dham yatris.",
             },
