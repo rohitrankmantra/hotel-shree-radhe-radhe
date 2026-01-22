@@ -164,7 +164,7 @@ export default function RoomDetailSlider() {
             </div>
 
                <motion.div whileHover={{ scale: 1.03 }} className="inline-block pt-2 sm:pt-3">
-              <Link href="/rooms" className="px-6 sm:px-7 py-3 sm:py-3.5 bg-primary text-primary-foreground rounded-full text-sm sm:text-base md:text-lg font-medium shadow-lg hover:bg-primary/90 transition-all flex items-center gap-2.5 group">
+              <Link href="/contact" className="px-6 sm:px-7 py-3 sm:py-3.5 bg-primary text-primary-foreground rounded-full text-sm sm:text-base md:text-lg font-medium shadow-lg hover:bg-primary/90 transition-all flex items-center gap-2.5 group">
                 Reserve Your Stay
               </Link>
             </motion.div>
