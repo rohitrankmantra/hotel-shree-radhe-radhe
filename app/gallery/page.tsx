@@ -13,7 +13,7 @@ export default function GalleryPage() {
       <GalleryHero />
       <GalleryGrid />
       <GalleryStories />
-      <Footer />
+    
     </main>
   )
 }

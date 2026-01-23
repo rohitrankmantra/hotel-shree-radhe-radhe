@@ -4,16 +4,28 @@ import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const galleryImagesData = [
-  { src: "/contact/contact-hero.jpeg", category: "rooms" },
+  { src: "/gallery/main.jpeg", category: "rooms" },
   { src: "/trek/trek1.jpeg", category: "nature" },
-  { src: "/Rooms/coridoor1.jpeg", category: "rooms" },
-  { src: "/trek/nature1.jpeg", category: "nature" },
-  { src: "/foods/food1.jpg", category: "food" },
   { src: "/services/temple2.jpeg", category: "spiritual" },
-  { src: "/Rooms/coridoor.jpeg", category: "rooms" },
+  { src: "/contact/contact-hero.jpeg", category: "rooms" },
+  { src: "/trek/nature1.jpeg", category: "nature" },
+  { src: "/temple/temple1.jpeg", category: "spiritual" },
+  { src: "/gallery/rest1.jpeg", category: "rooms" },
   { src: "/trek/nature2.jpeg", category: "nature" },
+  { src: "/temple/temple2.jpeg", category: "spiritual" },
+  { src: "/Rooms/coridoor1.jpeg", category: "rooms" },
+  { src: "/trek/trek3.jpeg", category: "nature" },
+  { src: "/temple/temple3.jpeg", category: "spiritual" },
+  { src: "/foods/food1.jpg", category: "food" },
+  { src: "/Rooms/coridoor.jpeg", category: "rooms" },
+  { src: "/temple/temple4.jpeg", category: "spiritual" },
   { src: "/Rooms/hotel-room7.jpeg", category: "rooms" },
-  { src: "/trek/nature3.jpeg", category: "nature" },
+  { src: "/temple/temple5.jpeg", category: "spiritual" },
+  { src: "/temple/temple6.jpeg", category: "spiritual" },
+  { src: "/temple/temple7.jpeg", category: "spiritual" },
+  { src: "/temple/temple10.jpeg", category: "spiritual" },
+  { src: "/temple/temple9.jpeg", category: "spiritual" },
+  { src: "/trek/hero.jpeg", category: "nature" },
 ];
 
 const categories = [
