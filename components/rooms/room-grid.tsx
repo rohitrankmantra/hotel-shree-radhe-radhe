@@ -21,7 +21,7 @@ const allRooms: Room[] = [
     image: "/Rooms/hotel-room1.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
-    roomOnlyPrice: "₹3,000",
+    roomOnlyPrice: "₹3,200",
     withMealsPrice: "₹1,800 per person",
   },
   {
@@ -48,8 +48,8 @@ const allRooms: Room[] = [
     image: "/Rooms/hotel-room7.jpeg",
     capacity: "2 Guests",
     bed: "Queen Bed",
-    roomOnlyPrice: "₹3,200",
-    withMealsPrice: "₹1,800 per person",
+    roomOnlyPrice: "₹4,500",
+    withMealsPrice: "₹1,450 per person",
   },
 ]
 

@@ -13,9 +13,7 @@ export default function RouteGuidance() {
             {
               from: "From Dehradun",
               route:
-                "Dehradun → Mussoorie → Naugaon  → Barkot → Gangani → Hanuman Chatti → Barkot → Janki Chatti → Yamunotri",
-                  route2:
-                "Dehradun → Mussoorie → Naugaon  → Barkot → Gangani → Hanuman Chatti → Barkot → Janki Chatti → Yamunotri",
+                "Dehradun → Mussoorie → Kempty Fall → Naugaon  → Barkot → Gangani →  Janki Chatti → Yamunotri",
                 
               notes:
                 "Most preferred and well-maintained route with scenic mountain views. Ideal for first-time pilgrims.",
@@ -23,7 +21,7 @@ export default function RouteGuidance() {
             {
               from: "From Rishikesh",
               route:
-                "Rishikesh → Dehradun → Mussoorie → Purola → Barkot → Hanuman Chatti → Yamunotri",
+                "Rishikesh → Dehradun → Mussoorie → Kempty Fall → Barkot → Gangnani   →  Janki Chatti →  Yamunotri",
               notes:
                 "Popular spiritual route; slightly longer but better road conditions and facilities.",
             },
@@ -59,11 +57,10 @@ export default function RouteGuidance() {
             </h3>
             <ul className="space-y-3">
               {[
-                "Best time to visit: May to October (Char Dham Yatra season)",
+                "Best time to visit: All Season",
                 "Carry warm clothing; temperatures drop sharply at night",
-                "Barkot is the main stay location before Yamunotri trek",
-                "Hanuman Chatti is the last motorable point before Yamunotri",
-                "Road conditions may be affected during monsoon (July–August)",
+                "Gangnani & Barkot is the main stay location before Yamunotri trek",
+                "Janki Chatti is the last motorable point before Yamunotri",
                 "Start early morning for a smooth and safe journey",
               ].map((tip, idx) => (
                 <li key={idx} className="flex gap-3 items-start text-foreground/80">

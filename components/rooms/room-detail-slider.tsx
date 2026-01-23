@@ -20,7 +20,7 @@ const featuredRooms: Room[] = [
     name: "Standard Double Room",
     category: "Standard Double Room (Blue/Gold)",
     image: "/Rooms/hotel-room8.jpeg",
-    price: "₹2,500",
+    price: "₹4,500",
     features: ["Mountain View", "Private Balcony", "Attached Bath"],
   },
   {
@@ -28,7 +28,7 @@ const featuredRooms: Room[] = [
     name: "Single / Family Room",
     category: "Single / Family Room",
     image: "/Rooms/hotel-room9.jpeg",
-    price: "₹4,500",
+    price: "₹3,200",
     features: ["King/Queen Bed", "Padded Headboard", "Nightstand with Glassware"],
   },
   {
@@ -44,7 +44,7 @@ const featuredRooms: Room[] = [
     name: "Standard Double Room (Red)",
     category: "Standard Double Room (Pink)",
     image: "/Rooms/hotel-room5.jpeg",
-    price: "₹2,800",
+    price: "₹4,500",
     features: ["King/Queen Bed", "Integrated Power Outlets", "Coordinated Linens"],
   },
 ]

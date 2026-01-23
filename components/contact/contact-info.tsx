@@ -24,7 +24,7 @@ export default function ContactInfo() {
           Address
         </h4>
         <p className="text-foreground/70 leading-relaxed">
-          Yamunotri Road, Barkot <br />
+          Yamunotri Road, Barkot ,Gangnani <br />
           Uttarkashi District <br />
           Uttarakhand 249155 <br />
           India

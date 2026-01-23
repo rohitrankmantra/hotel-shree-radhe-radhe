@@ -11,11 +11,11 @@ export default function DistanceInfo() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { location: "Yamunotri Temple", distance: "40 km approx. (35 km by transport + 5 km walk)" },
-            { location: "Dehradun", distance: "180 km approx." },
-            { location: "Rishikesh", distance: "150 km approx." },
-            { location: "Haridwar", distance: "250 km approx." },
+            { location: "Dehradun", distance: "144 km approx." },
+            { location: "Rishikesh", distance: "184 km approx." },
+            { location: "Haridwar", distance: "198 km approx." },
             { location: "Delhi", distance: "420 km approx." },
-            { location: "Triveni Ghat Gangani", distance: "400 km approx." },
+            { location: "Triveni Ghat Gangani", distance: "400 m approx." },
           ].map((item, idx) => (
             <div
               key={idx}

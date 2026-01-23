@@ -42,7 +42,7 @@ export default function LocationPreview() {
                 <div>
                   <p className="font-semibold text-foreground">From Dehradun</p>
                   <p className="text-sm text-foreground/60">
-                    Approx. 250 km by road
+                    Approx. 144 km by road
                   </p>
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default function LocationPreview() {
                 <div>
                   <p className="font-semibold text-foreground">From Rishikesh</p>
                   <p className="text-sm text-foreground/60">
-                    Approx. 150 km by road
+                    Approx. 184 km by road
                   </p>
                 </div>
               </div>
@@ -64,7 +64,7 @@ export default function LocationPreview() {
                     Yamunotri Temple
                   </p>
                   <p className="text-sm text-foreground/60">
-                    Only 6 km from hotel
+                    Only 35 km from hotel
                   </p>
                 </div>
               </div>
