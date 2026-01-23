@@ -21,7 +21,7 @@ const galleryImagesData = [
   { src: "/temple/temple4.jpeg", category: "spiritual" },
   { src: "/Rooms/hotel-room7.jpeg", category: "rooms" },
   { src: "/temple/temple5.jpeg", category: "spiritual" },
-  { src: "/temple/temple6.jpeg", category: "spiritual" },
+  { src: "/temple/temple12.jpeg", category: "spiritual" },
   { src: "/temple/temple7.jpeg", category: "spiritual" },
   { src: "/temple/temple10.jpeg", category: "spiritual" },
   { src: "/temple/temple9.jpeg", category: "spiritual" },
