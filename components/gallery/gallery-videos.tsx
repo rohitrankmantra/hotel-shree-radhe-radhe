@@ -120,7 +120,7 @@ export default function GalleryVideos() {
       </div>
 
       {/* LAST VIDEO — natural desktop ratio */}
-      <div className="mt-10 flex justify-center">
+      <div className="mt-10 mb-20 flex justify-center">
         <div className="w-full lg:w-[90%] max-h-[70vh]">
           <VideoCard
             src={videos[1].src}

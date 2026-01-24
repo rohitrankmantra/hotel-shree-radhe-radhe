@@ -259,7 +259,7 @@ export default function Navbar() {
       {/* ---------------- BOOKING FORM MODAL (PORTAL) ---------------- */}
       {isBookingOpen && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm overflow-y-auto p-4"
+          className="fixed inset-0 z-9999 flex items-center justify-center bg-black/50 backdrop-blur-sm overflow-y-auto p-4"
           onClick={() => setIsBookingOpen(false)}
         >
           <div

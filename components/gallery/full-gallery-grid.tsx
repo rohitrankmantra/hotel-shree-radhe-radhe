@@ -47,7 +47,7 @@ export default function TravelServicePage() {
           <Image
             src="/trek/trek3.jpeg"
             alt="Travel and transportation services"
-            className="rounded-2xl object-cover w-full h-[28rem]"
+            className="rounded-2xl object-cover w-full h-112"
             width={1200}
             height={800}
             priority
@@ -86,7 +86,7 @@ export default function TravelServicePage() {
           <Image
             src="/trek/trek7.jpeg"
             alt="Route guidance for Yamunotri"
-            className="rounded-2xl object-cover w-full h-[26rem]"
+            className="rounded-2xl object-cover w-full h-104"
             width={1200}
             height={800}
           />
@@ -120,7 +120,7 @@ export default function TravelServicePage() {
           <Image
             src="/trek/trek8.jpeg"
             alt="Tour packages for pilgrims"
-            className="rounded-2xl object-cover w-full h-[26rem]"
+            className="rounded-2xl object-cover w-full h-104"
             width={1200}
             height={800}
           />

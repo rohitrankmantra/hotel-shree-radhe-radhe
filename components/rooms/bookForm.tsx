@@ -126,7 +126,7 @@ export default function BookForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full sm:flex-1 rounded-xl bg-gradient-to-r from-[#22441A] to-[#2d5a24] text-white py-3 text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex justify-center items-center gap-2 mt-2 sm:mt-0 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
+                className="w-full sm:flex-1 rounded-xl bg-linear-to-r from-[#22441A] to-[#2d5a24] text-white py-3 text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex justify-center items-center gap-2 mt-2 sm:mt-0 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
               >
                 {loading ? (
                   <>
