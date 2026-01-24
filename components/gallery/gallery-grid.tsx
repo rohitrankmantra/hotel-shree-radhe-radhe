@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-const galleryImagesData = [
+const baseImages = [
   { src: "/gallery/main.jpeg", category: "rooms" },
   { src: "/trek/trek1.jpeg", category: "nature" },
   { src: "/services/temple2.jpeg", category: "spiritual" },
@@ -25,24 +25,46 @@ const galleryImagesData = [
   { src: "/temple/temple7.jpeg", category: "spiritual" },
   { src: "/temple/temple10.jpeg", category: "spiritual" },
   { src: "/temple/temple9.jpeg", category: "spiritual" },
-  { src: "/trek/hero.jpeg", category: "nature" },
+  { src: "/trek/hero.jpeg", category: "nature" }, 
 ];
+
+const hotelImages = [
+  { src: "/gallery/surr1.jpeg", category: "hotel" },
+  { src: "/gallery/surr2.jpeg", category: "hotel" },
+  { src: "/gallery/surr3.jpeg", category: "hotel" },
+  { src: "/gallery/surr4.jpeg", category: "hotel" },
+  { src: "/gallery/surr5.jpeg", category: "hotel" },
+  { src: "/gallery/surr6.webp", category: "hotel" },
+  { src: "/gallery/surr7.webp", category: "hotel" },
+  { src: "/gallery/surr8.webp", category: "hotel" },
+];
+
+const winterImages = Array.from({ length: 14 }, (_, i) => ({
+  src: `/snow/snow${i + 1}.jpeg`,
+  category: "winter",
+}));
+
+const galleryImagesData = [...hotelImages, ...baseImages, ...winterImages];
 
 const categories = [
   { id: "all", label: "All" },
+  { id: "hotel", label: "Hotel Preview" },
   { id: "rooms", label: "Facilities" },
   { id: "nature", label: "Nature" },
   { id: "food", label: "Food" },
   { id: "spiritual", label: "Spiritual" },
+  { id: "winter", label: "Yamunotri in Winters" },
 ];
 
 export default function GalleryGrid() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [activeFilter, setActiveFilter] = useState("all");
 
-  const filteredImages = activeFilter === "all" 
-    ? galleryImagesData 
-    : galleryImagesData.filter(img => img.category === activeFilter);
+  const filteredImages = useMemo(() => {
+    return activeFilter === "all"
+      ? galleryImagesData
+      : galleryImagesData.filter((img) => img.category === activeFilter);
+  }, [activeFilter]);
 
   // Find the actual index in the full gallery for lightbox navigation
   const getFullIndex = (filteredIndex: number) => {

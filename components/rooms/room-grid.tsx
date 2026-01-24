@@ -49,7 +49,7 @@ const allRooms: Room[] = [
     capacity: "2 Guests",
     bed: "Queen Bed",
     roomOnlyPrice: "₹4,500",
-    withMealsPrice: "₹1,450 per person",
+    withMealsPrice: "₹1,400 per person",
   },
 ]
 
