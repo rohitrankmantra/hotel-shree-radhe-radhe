@@ -46,11 +46,13 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   useEffect(() => {
     setIsOpen(false);
     setIsServicesOpen(false);
+    setIsMobileServicesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -233,24 +235,92 @@ export default function Navbar() {
         {isOpen && (
           <div className="md:hidden border-t border-border bg-background/95">
             <div className="px-5 py-6 space-y-5">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/rooms", label: "Rooms & Stay" },
-                { href: "/services", label: "Services" },
-                { href: "/restaurant", label: "Restaurant" },
-                { href: "/gallery", label: "Gallery" },
-                { href: "/location", label: "Location" },
-                { href: "/contact", label: "Contact" },
-              ].map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="block text-base font-medium text-muted-foreground hover:text-primary"
-                  onClick={() => setIsOpen(false)}
+              <Link
+                href="/"
+                className="block text-base font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                href="/rooms"
+                className="block text-base font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Rooms & Stay
+              </Link>
+
+              {/* Services Section with Dropdown */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <Link
+                    href="/services"
+                    className="block text-base font-medium text-muted-foreground hover:text-primary"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Services
+                  </Link>
+                  <button
+                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    className="p-1 text-muted-foreground hover:text-primary focus:outline-none"
+                    aria-label="Toggle services menu"
+                  >
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform duration-300 ${
+                        isMobileServicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                </div>
+                
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isMobileServicesOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
                 >
-                  {item.label}
-                </Link>
-              ))}
+                  <div className="pl-4 space-y-3 border-l-2 border-muted pt-2">
+                    {servicesMenu.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="block text-sm font-medium text-muted-foreground hover:text-primary"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                href="/restaurant"
+                className="block text-base font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Restaurant
+              </Link>
+              <Link
+                href="/gallery"
+                className="block text-base font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Gallery
+              </Link>
+              <Link
+                href="/location"
+                className="block text-base font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Location
+              </Link>
+              <Link
+                href="/contact"
+                className="block text-base font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
             </div>
           </div>
         )}
