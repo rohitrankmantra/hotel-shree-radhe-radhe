@@ -49,7 +49,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {[
                 { label: "Home", href: "/" },
-                { label: "Rooms & Stay", href: "/rooms" },
+                { label: "Rooms & Stay", href: "/rooms-stays" },
                 { label: "Services", href: "/services" },
                 { label: "Restaurant", href: "/restaurant" },
                 { label: "Gallery", href: "/gallery" },

@@ -127,7 +127,7 @@ export default function RoomsPreview() {
         {/* VIEW ALL */}
         <div className="mt-10 flex justify-center">
           <a
-            href="/rooms"
+            href="/rooms-stays"
             className="font-serif text-base sm:text-lg text-accent hover:text-primary underline underline-offset-4"
           >
             Explore All Rooms

@@ -114,9 +114,9 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-9">
               <NavItem href="/" label="Home" active={isActive("/")} />
               <NavItem
-                href="/rooms"
+                href="/rooms-stays"
                 label="Rooms & Stay"
-                active={isActive("/rooms")}
+                active={isActive("/rooms-stays")}
               />
 
               {/* SERVICES */}
@@ -243,7 +243,7 @@ export default function Navbar() {
                 Home
               </Link>
               <Link
-                href="/rooms"
+                href="/rooms-stays"
                 className="block text-base font-medium text-muted-foreground hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
